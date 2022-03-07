@@ -17,7 +17,7 @@
                     <div class="col-xl-8 col-md-8">
 
                         <div class="phone_thumb wow fadeInDown" data-wow-duration="1.1s" data-wow-delay=".2s">
-                            <img src="img/main/main_img.png" alt="">
+                            <img src="public/img/main/main_img.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         <div class="single_service text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
                             <a href="price.html#Graphic" >
                                 <div class="thumb">
-                                    <img src="img/main/graph_design.png" alt="" style="padding-top: 3%; max-width: 220px; max-height: 220px;">
+                                    <img src="public/img/main/graph_design.png" alt="" style="padding-top: 3%; max-width: 220px; max-height: 220px;">
                                     <h4>GRAPHIC <br>DESIGN </h4>
                                 </div>
                             </a>
@@ -68,7 +68,7 @@
                             <div class="single_service text-center wow fadeInUp " data-wow-duration=".8s" data-wow-delay=".6s">
                               <a href="price.html#Photography" >
                                 <div class="thumb">
-                                    <img src="img/main/product_photo.png" alt="" style="padding-top: 3%; max-width: 220px; max-height: 220px;">
+                                    <img src="public/img/main/product_photo.png" alt="" style="padding-top: 3%; max-width: 220px; max-height: 220px;">
                                     <h4>PRODUCT <BR>PHOTOGRAPHY</h4>
                                 </div>
                               </a>
@@ -77,7 +77,7 @@
                 <!-- <div class="col-lg-4 col-md-4">
                     <div class="single_service text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
                             <div class="thumb">
-                                <img src="img/main/Coming-Soon.png" alt="" style="padding-top: 3%; max-width: 220px; max-height: 220px;">
+                                <img src="public/img/main/Coming-Soon.png" alt="" style="padding-top: 3%; max-width: 220px; max-height: 220px;">
                                 <h4>VIDEO <BR>SERVICES</h4>
                             </div>
                     </div>

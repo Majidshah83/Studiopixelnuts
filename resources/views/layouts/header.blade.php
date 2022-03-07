@@ -5,8 +5,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-4 col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="img/main/logo.jpg" alt="" style="max-height: 70px; max-width: 70px;">
+                                <a href="{{url('/')}}">
+                                    <img src="public/img/main/logo.jpg" alt="" style="max-height: 70px; max-width: 70px;">
                                 </a>
                             </div>
                         </div>
@@ -14,8 +14,8 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="{{url('index')}}">Home</a></li>
-                                        <li><a href="{{url('index')}}">Who We Are</a></li>
+                                        <li><a class="active" href="{{url('/')}}">Home</a></li>
+                                        <li><a href="{{url('/')}}">Who We Are</a></li>
                                         <li><a href="{{url('portfolio')}}">Portfolio</a></li>
                                         <li><a href="{{url('price')}}">Pricing</a></li>
                                         <li><a href="{{url('price')}}">FAQ</a></li>

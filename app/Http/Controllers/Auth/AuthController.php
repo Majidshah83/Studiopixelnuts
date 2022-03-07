@@ -76,14 +76,14 @@ class AuthController extends Controller
      *
      * @return response()
      */
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('dashboard');
-        }
+    // public function dashboard()
+    // {
+    //     if(Auth::check()){
+    //         return view('dashboard');
+    //     }
 
-        return redirect("login")->withSuccess('Opps! You do not have access');
-    }
+    //     return redirect("login")->withSuccess('Opps! You do not have access');
+    // }
 
     /**
      * Write code on Method

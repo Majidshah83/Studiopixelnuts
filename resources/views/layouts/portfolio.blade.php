@@ -18,32 +18,32 @@
         <div class="row gallery-item">
           <div class=" col-lg-4 col-md-6">
             <a>
-              <div class="single-gallery-image" style="background: url('{{ asset('img/gallery/logo_1.jpg')}}'"></div>
+              <div class="single-gallery-image" style="background: url('{{asset('public/img/gallery/logo_1.jpg')}}'"></div>
             </a>
           </div>
           <div class=" col-lg-4 col-md-6">
             <a>
-              <div class="single-gallery-image" style="background: url('{{ asset('img/gallery/logo_2.jpg')}}'"></div>
+              <div class="single-gallery-image" style="background: url('{{asset('public/img/gallery/logo_2.jpg')}}'"></div>
             </a>
           </div>
           <div class=" col-lg-4 col-md-6">
             <a>
-              <div class="single-gallery-image" style="background: url('{{ asset('img/gallery/logo_3.jpg')}}'"></div>
+              <div class="single-gallery-image" style="background: url('{{asset('public/img/gallery/logo_3.jpg')}}'"></div>
             </a>
           </div>
           <div class=" col-lg-4 col-md-6">
             <a>
-              <div class="single-gallery-image" style="background: url('{{ asset('img/gallery/logo_4.jpg')}}'"></div>
+              <div class="single-gallery-image" style="background: url('{{asset('public/img/gallery/logo_4.jpg')}}'"></div>
             </a>
           </div>
           <div class=" col-lg-4 col-md-6">
             <a>
-              <div class="single-gallery-image" style="background: url('{{ asset('img/gallery/logo_5.jpg')}}';"></div>
+              <div class="single-gallery-image" style="background: url('{{asset('public/img/gallery/logo_5.jpg')}}';"></div>
             </a>
           </div>
           <div class=" col-lg-4 col-md-6">
             <a>
-              <div class="single-gallery-image" style="background: url('{{ asset('img/gallery/logo_6.jpg')}}';"></div>
+              <div class="single-gallery-image" style="background: url('{{asset('public/img/gallery/logo_6.jpg')}}';"></div>
             </a>
           </div>
         </div>
@@ -54,30 +54,30 @@
 
             <div class="mySlides">
               <div class="numbertext">1 / 4</div>
-              <img src="{{asset('img/gallery/logo_1.jpg')}}" style="width:100%">
+              <img src="{{asset('public/public/public/img/gallery/logo_1.jpg')}}" style="width:100%">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">2 / 4</div>
-              <img src="{{asset('img/gallery/logo_2.jpg')}}" style="width:100%">
+              <img src="{{asset('public/public/public/img/gallery/logo_2.jpg')}}" style="width:100%">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">3 / 4</div>
-              <img src="{{asset('img/gallery/logo_3.jpg')}}" style="width:100%">
+              <img src="{{asset('public/public/public/img/gallery/logo_3.jpg')}}" style="width:100%">
             </div>
             <div class="mySlides">
               <div class="numbertext">3 / 4</div>
-              <img src="{{asset('img/gallery/logo_4.jpg')}}" style="width:100%">
+              <img src="{{asset('public/public/public/img/gallery/logo_4.jpg')}}" style="width:100%">
             </div>
             <div class="mySlides">
               <div class="numbertext">3 / 4</div>
-              <img src="{{asset('img/gallery/logo_5.jpg')}}" style="width:100%">
+              <img src="{{asset('public/public/public/img/gallery/logo_5.jpg')}}" style="width:100%">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">4 / 4</div>
-              <img src="{{asset('img/gallery/logo_6.jpg')}}">
+              <img src="{{asset('public/public/public/img/gallery/logo_6.jpg')}}">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -201,37 +201,37 @@
         <div id="carouselExampleControls" class="carousel slide gallery_carousel" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/gallery/Listing_1.jpg" alt="" onclick="openModal2();currentSlide2(1)">
+              <img src="public/img/gallery/Listing_1.jpg" alt="" onclick="openModal2();currentSlide2(1)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_2.jpg" alt="" onclick="openModal2();currentSlide2(2)">
+              <img src="public/img/gallery/Listing_2.jpg" alt="" onclick="openModal2();currentSlide2(2)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_3.jpg" alt="" onclick="openModal2();currentSlide2(3)">
+              <img src="public/img/gallery/Listing_3.jpg" alt="" onclick="openModal2();currentSlide2(3)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_4.jpg" alt="" onclick="openModal2();currentSlide2(4)">
+              <img src="public/img/gallery/Listing_4.jpg" alt="" onclick="openModal2();currentSlide2(4)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_5.jpg" alt="" onclick="openModal2();currentSlide2(5)">
+              <img src="public/img/gallery/Listing_5.jpg" alt="" onclick="openModal2();currentSlide2(5)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_6.jpg" alt="" onclick="openModal2();currentSlide2(6)">
+              <img src="public/img/gallery/Listing_6.jpg" alt="" onclick="openModal2();currentSlide2(6)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_7.jpg" alt="" onclick="openModal2();currentSlide2(7)">
+              <img src="public/img/gallery/Listing_7.jpg" alt="" onclick="openModal2();currentSlide2(7)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_8.jpg" alt="" onclick="openModal2();currentSlide2(8)">
+              <img src="public/img/gallery/Listing_8.jpg" alt="" onclick="openModal2();currentSlide2(8)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_9.jpg" alt="" onclick="openModal2();currentSlide2(9)">
+              <img src="public/img/gallery/Listing_9.jpg" alt="" onclick="openModal2();currentSlide2(9)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_10.jpg" alt="" onclick="openModal2();currentSlide2(10)">
+              <img src="public/img/gallery/Listing_10.jpg" alt="" onclick="openModal2();currentSlide2(10)">
             </div>
             <div class="carousel-item">
-              <img src="img/gallery/Listing_11.jpg" alt="" onclick="openModal2();currentSlide2(11)">
+              <img src="public/img/gallery/Listing_11.jpg" alt="" onclick="openModal2();currentSlide2(11)">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -250,50 +250,50 @@
 
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_1.jpg" style="width:100%">
+              <img src="public/img/gallery/Listing_1.jpg" style="width:100%">
             </div>
 
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_2.jpg" style="width:100%">
+              <img src="public/img/gallery/Listing_2.jpg" style="width:100%">
             </div>
 
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_3.jpg" style="width:100%">
+              <img src="public/img/gallery/Listing_3.jpg" style="width:100%">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_4.jpg" style="width:100%">
+              <img src="public/img/gallery/Listing_4.jpg" style="width:100%">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_5.jpg" style="width:100%">
+              <img src="public/img/gallery/Listing_5.jpg" style="width:100%">
             </div>
 
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_6.jpg">
+              <img src="public/img/gallery/Listing_6.jpg">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_7.jpg">
+              <img src="public/img/gallery/Listing_7.jpg">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_8.jpg">
+              <img src="public/img/gallery/Listing_8.jpg">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_9.jpg">
+              <img src="public/img/gallery/Listing_9.jpg">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_10.jpg">
+              <img src="public/img/gallery/Listing_10.jpg">
             </div>
             <div class="mySlides2">
 
-              <img src="img/gallery/Listing_11.jpg">
+              <img src="public/img/gallery/Listing_11.jpg">
             </div>
 
             <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>

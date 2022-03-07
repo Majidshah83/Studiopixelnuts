@@ -11,8 +11,8 @@
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="shortcut icon" href="{{asset('img/main/favicon.ico" type="image/x-icon')}}">
-    <link rel="icon" href="{{asset('img/main/favicon.ico" type="image/x-icon')}}">
+    <link rel="shortcut icon" href="{{asset('public/img/main/favicon.ico" type="image/x-icon')}}">
+    <link rel="icon" href="{{asset('public/img/main/favicon.ico" type="image/x-icon')}}">
 
     <!-- CSS here -->
      @include('layouts.style')    <!--inlude Style page -->

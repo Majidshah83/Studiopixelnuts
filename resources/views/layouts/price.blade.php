@@ -23,10 +23,10 @@
                             <span>Starts From $280</span>
                         </div>
                         <ul>
-                            <li> <img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">2 Initial Concepts</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Final Files: Ai, PDF, PNG, JPG</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;">Branding Guide
+                            <li> <img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">2 Initial Concepts</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Final Files: Ai, PDF, PNG, JPG</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;">Branding Guide
                             </li>
                             <!-- <li><img src="('img/main/mark1.svg')}}" style="width: 15px;"> Commercial Use</li> -->
                         </ul>
@@ -43,13 +43,13 @@
                             </span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">1 Initial Concept</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">1 Initial Concept</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Print Ready Files: Ai, PDF
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Print Ready Files: Ai, PDF
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">High Resolution Mockup</li>
-                            <!-- <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;"> High Resolution Mockup</li> -->
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">High Resolution Mockup</li>
+                            <!-- <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;"> High Resolution Mockup</li> -->
                         </ul>
                         <div class="prising_bottom">
                             <button class="get_now prising_btn btn-popup">i need this!</button>
@@ -65,14 +65,14 @@
                         </div>
 
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Choose Between Double
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Choose Between Double
                                 Sided, Bi-Fold and Tri-Fold</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">1 Initial Concept
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">1 Initial Concept
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Print Ready Files: Ai, PDF</li>
-                            <!-- <li><img src="img/main/mark1.svg" style="width: 15px;"> Print Ready Files: Ai, PDF</li> -->
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Print Ready Files: Ai, PDF</li>
+                            <!-- <li><img src="public/img/main/mark1.svg" style="width: 15px;"> Print Ready Files: Ai, PDF</li> -->
                         </ul>
                         <div class="prising_bottom">
                             <button class="get_now prising_btn btn-popup">i need this!</button>
@@ -87,12 +87,12 @@
                             </span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">7 Listing Images
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">7 Listing Images
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Infographic/Manipulation</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">High Resolution Images</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;">Stock Images</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Infographic/Manipulation</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">High Resolution Images</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;">Stock Images</li>
                         </ul>
                         <div class="prising_bottom">
                             <button class="get_now prising_btn btn-popup">i need this!</button>
@@ -107,15 +107,15 @@
                             </span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Option With and Without
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Option With and Without
                                 Copywriting</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">5 Modules
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">5 Modules
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">1 Concept
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">1 Concept
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Infographic/Manipulation</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;">Stock Images
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Infographic/Manipulation</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;">Stock Images
                             </li>
                         </ul>
                         <div class="prising_bottom">
@@ -130,16 +130,16 @@
                             <span>Starts from $480</span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Option With and Without
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Option With and Without
                                 Copywriting</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Basic 2 Pages
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Basic 2 Pages
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Between 6-8 Images
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Between 6-8 Images
                                 in Total
                                 </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">3 Minor Revisions
                             </li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;">Stock Images</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;">Stock Images</li>
                         </ul>
                         <div class="prising_bottom">
                             <button class="get_now prising_btn btn-popup">i need this!</button>
@@ -228,22 +228,22 @@
                             <span>Starts from $1240</span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">1 Hero Image</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">6 Listing Images</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">All Retouched Photos Used
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">1 Hero Image</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">6 Listing Images</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">All Retouched Photos Used
                                 in Listing Images (White
                                 Background + Lifestyle)</li>
-                            <li><img src="img/main/mark1.svg" style="width: 15px;">2 Locations (Studio +
+                            <li><img src="public/img/main/mark1.svg" style="width: 15px;">2 Locations (Studio +
                                 1 Lifestyle)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Consultation Call 30mins</li>
-                            <!-- <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;"> Project Brief</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;"> Consultation Call</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;"> High Resolution Images</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;"> Hand Model Included</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;"> Props</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;"> 3 Revisions</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;"> Reshoots Not Included</li>
-                            <li><img src="{{ asset('img/main/mark2.svg')}}" style="width: 15px;"> Shipping & Custom Fees Not Included
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Consultation Call 30mins</li>
+                            <!-- <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;"> Project Brief</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;"> Consultation Call</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;"> High Resolution Images</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;"> Hand Model Included</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;"> Props</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;"> 3 Revisions</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;"> Reshoots Not Included</li>
+                            <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;"> Shipping & Custom Fees Not Included
                             </li> -->
                         </ul>
                         <div class="prising_bottom">
@@ -265,19 +265,19 @@
                             <span>Starts from $2290</span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">2 Hero Images</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">6 Listing Images
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">2 Hero Images</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">6 Listing Images
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">A+ Content - 5 Modules
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">A+ Content - 5 Modules
                                 (Graphics, Text Modules
                                 & Wireframe)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">All Retouched Photos Used
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">All Retouched Photos Used
                                 in Listing Images and A+
                                 Content (White
                                 Background + Lifestyle)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">2 Locations (Studio +
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">2 Locations (Studio +
                                 1 Lifestyle)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Consultation Call 1hr
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Consultation Call 1hr
                             </li>
                             <!-- <li><img src="('img/main/mark1.svg')}}" style="width: 15px;"> Consultation Call</li>
                             <li><img src="('img/main/mark1.svg')}}" style="width: 15px;"> High Resolution Images</li>
@@ -309,20 +309,20 @@
                         <span>Starts from $2620</span>
                         </div>
                         <ul>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">2 Hero Images</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">6 Listing Images</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">A+ Content - 5 Modules
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">2 Hero Images</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">6 Listing Images</li>
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">A+ Content - 5 Modules
                                 (Graphics, Text Modules
                                 & Wireframe)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">All Retouched Photos Used
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">All Retouched Photos Used
                                 in Listing Images and A+
                                 Content (White
                                 Background + Lifestyle)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">2 Locations (Studio +
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">2 Locations (Studio +
                                 1 Lifestyle)</li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Consultation Call 1hr
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Consultation Call 1hr
                             </li>
-                            <li><img src="{{ asset('img/main/mark1.svg')}}" style="width: 15px;">Listing Copywriting (Fully
+                            <li><img src="{{asset('public/img/main/mark1.svg')}}" style="width: 15px;">Listing Copywriting (Fully
                                 Optimized Title, Bullet Points,
                                 Product Description, Back
                                 End Keywords, Organic

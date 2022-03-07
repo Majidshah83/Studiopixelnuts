@@ -22,6 +22,7 @@ class FormController extends Controller
 
     public function store(Request $request)
     {
+
         $formdata= new Logo;
         $formdata->fname=$request->fname;
         $formdata->surname=$request->surname;
@@ -64,6 +65,7 @@ class FormController extends Controller
    $logo=array();
    $fontLogo=array();
    $storybrand=array();
+
 foreach($request->visionFlogo as $visionFlogo)
     {
         $tmp_name=$visionFlogo->getPathname();
@@ -82,7 +84,7 @@ foreach($request->visionFlogo as $visionFlogo)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDSaCFXtfJoE3dL7dDXgUNZROjqlB6OIjd3KKtbH4H2iayFYF6T_oYNipW0BDWlfXuD-0aKt2QgH300NSbzkGcXI4DFwMczcqWZiTEvxJDZkobVVk1EgxisI24XfozI5nEVHIMkLBC2M'; // oauth token
+              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -100,21 +102,29 @@ foreach($request->visionFlogo as $visionFlogo)
                   ),
                   // 'Content-Type: application/octet-stream'
               );
-               $ch = curl_init($api_url);
+               $ch = curl_init($api_url);    //initialize a new session and return a cURL handle.
 
               curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+              //The curl_setopt() function will set options for a CURL session identified by the ch parameter
+              // CURLOPT_HTTPHEADER Pass a pointer to a linked list of HTTP headers to pass to the server
               curl_setopt($ch, CURLOPT_POST, true);
+              //CURLOPT_POST. true to do a regular HTTP POST. This POST is the normal application/x-www-form-urlencoded kind, most commonly used by HTML forms.
 
               $path = $tmp_name;
               $fp = fopen($path, 'rb');
+              //The fopen() function in PHP is an inbuilt function which is used to open a file or an URL
               $filesize = filesize($path);
 
 
               curl_setopt($ch, CURLOPT_POSTFIELDS, fread($fp, $filesize));
+              //CURLOPT_POSTFIELDS. The full data to post in a HTTP "POST"
+              //fread is a function that reads buffered binary input from a file.
               curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+              //CURLOPT_RETURNTRANSFER. true to return the transfer as a string of the return value of curl_exec() instead of outputting it directly.
               curl_setopt($ch, CURLOPT_VERBOSE, 1); // debug
-
+             //CURLOPT_VERBOSE. true to output verbose information. Writes output to STDERR , or the file specified using CURLOPT_STDERR .
               $response = curl_exec($ch);
+              //curl_exec execute the given cURL session.
               // dd($response);
 
               $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -142,20 +152,21 @@ foreach($request->visionFlogo as $visionFlogo)
    curl_setopt($ch_s, CURLOPT_POST, true);
    curl_setopt($ch_s, CURLOPT_RETURNTRANSFER, true);
    curl_setopt($ch_s, CURLOPT_VERBOSE, 1);
-
+//CURLOPT_VERBOSE. true to output verbose information.
    $response_s = curl_exec($ch_s);
-   // dd($response_s);
+    // dd($response_s);
    $http_code_s = curl_getinfo($ch_s, CURLINFO_HTTP_CODE);
 
    curl_close($ch_s);
 
    $r = json_decode($response_s,true);
-   // dd($r);
+    // dd($r);
    $link = $r['url'];
    $link = substr($link, 0, -4)."dl=1";
 
    array_push($image_links,$link);
    // header('Content-Type: application/json');
+
 
             }
 
@@ -178,7 +189,7 @@ foreach($request->logoColor as $logoColor)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDSaCFXtfJoE3dL7dDXgUNZROjqlB6OIjd3KKtbH4H2iayFYF6T_oYNipW0BDWlfXuD-0aKt2QgH300NSbzkGcXI4DFwMczcqWZiTEvxJDZkobVVk1EgxisI24XfozI5nEVHIMkLBC2M'; // oauth token
+              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -273,7 +284,7 @@ foreach($request->logoFont as $logoFont)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDSaCFXtfJoE3dL7dDXgUNZROjqlB6OIjd3KKtbH4H2iayFYF6T_oYNipW0BDWlfXuD-0aKt2QgH300NSbzkGcXI4DFwMczcqWZiTEvxJDZkobVVk1EgxisI24XfozI5nEVHIMkLBC2M'; // oauth token
+              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -368,7 +379,7 @@ foreach($request->brandStory as $brandStory)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDSaCFXtfJoE3dL7dDXgUNZROjqlB6OIjd3KKtbH4H2iayFYF6T_oYNipW0BDWlfXuD-0aKt2QgH300NSbzkGcXI4DFwMczcqWZiTEvxJDZkobVVk1EgxisI24XfozI5nEVHIMkLBC2M'; // oauth token
+              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -444,7 +455,15 @@ foreach($request->brandStory as $brandStory)
    // header('Content-Type: application/json');
 
             }
-dd("inserted Alhamdullah");
+
+            $update=Logo::where('id',$formdata->id)->first();
+            $update->visionFlogo=$image_links;
+            $update->logoColor=$logo;
+            $update->logoFont=$fontLogo;
+            $update->brandStory=$storybrand;
+            $update->save();
+
+     return redirect('/');
 
     }
 }

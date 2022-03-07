@@ -7,28 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form | Pixelnuts</title>
 
-  <link rel="shortcut icon" href="{{asset('img/main/favicon.ico')}}" type="image/x-icon">
-  <link rel="icon" href="{{asset('img/main/favicon.ico')}}" type="image/x-icon">
-  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
-  <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
-  <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
-  <link rel="stylesheet" href="{{asset('css/gijgo.css')}}">
-  <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/slick.css')}}">
-  <link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="shortcut icon" href="{{asset('public/img/main/favicon.ico')}}" type="image/x-icon">
+  <link rel="icon" href="{{asset('public/img/main/favicon.ico')}}" type="image/x-icon">
+  <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/magnific-popup.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/nice-select.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/flaticon.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/gijgo.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/animate.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/slicknav.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 
 <body style="margin: 0; padding: 0;  width: 100%;
 height: auto;
-background-image: url('{{ asset('img/main/formBg.jpg')}}');
+background-image: url('{{asset('public/img/main/formBg.jpg')}}');
 background-size: cover;">
   <div class="formSection">
+     <br>
+
     <h1 class="formHeading">
       In order to get started, please fill out information below:
     </h1>
@@ -37,11 +39,11 @@ background-size: cover;">
     <div class="row mt-5">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <label for="fname" class="formLabel">Your name:<span>*</span> </label>
-        <input type="text" name="fname" class="input" maxlength="800">
+        <input type="text" name="fname" class="input" maxlength="800" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3 mt-md-0">
         <label for="surname" class="formLabel">Your surname:<span>*</span></label>
-        <input type="text" name="surname" class="input" maxlength="800">
+        <input type="text" name="surname" class="input" maxlength="800" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-4">
         <label for="hearaboutservices" class="formLabel">How did you hear about our services?
@@ -61,7 +63,7 @@ background-size: cover;">
           Note: If method of payment is paypal, 6% of paypal fees will be included in the invoice.
         </p>
 
-        <select name="payment"  id="" class="formSelect">
+        <select name="payment"  id="" class="formSelect" required>
           <option value="">Select</option>
           <option value="BankTransfer"> Bank Transfer
           </option>
@@ -70,7 +72,7 @@ background-size: cover;">
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="companyname" class="formLabel">Company name:<span>*</span></label>
-        <input type="text" class="input" maxlength="800" name="companyname">
+        <input type="text" class="input" maxlength="800" name="companyname" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="Address" class="formLabel">Address:<span>*</span></label>
@@ -78,19 +80,19 @@ background-size: cover;">
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="City" class="formLabel"> City:<span>*</span></label>
-        <input type="text" class="input" maxlength="800" name="city">
+        <input type="text" class="input" maxlength="800" name="city" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="Country" class="formLabel"> Country:<span>*</span></label>
-        <input type="text" name="country" class="input" maxlength="800">
+        <input type="text" name="country" class="input" maxlength="800" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="zipcode" class="formLabel"> Zip code:<span>*</span></label>
-        <input type="text" class="input" maxlength="800" name="zipcode">
+        <input type="text" class="input" maxlength="800" name="zipcode" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="email" class="formLabel"> Email:<span>*</span></label>
-        <input type="text" name="email" class="input" maxlength="800">
+        <input type="text" name="email" class="input" maxlength="800" required>
       </div>
     </div>
     <h1 class="formHeading mt-4">
@@ -100,7 +102,7 @@ background-size: cover;">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
         <label for="nameIncorporatedLogo" class="formLabel">The name you want incorporated into the logo:<span>*</span>
         </label>
-        <input type="text" class="input" maxlength="800" name="nameIncorporatedLogo">
+        <input type="text" class="input" maxlength="800" name="nameIncorporatedLogo" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="sloganIncorporatedLogo" class="formLabel">The slogan you want incorporated into the logo (Optional):
@@ -110,7 +112,7 @@ background-size: cover;">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="descLogo" class="formLabel">A short description of the logo:<span>*</span>
         </label>
-        <input type="text" class="input" maxlength="800" name="descLogo">
+        <input type="text" class="input" maxlength="800" name="descLogo" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="listDescOfProducts" class="formLabel">A list and description of products that will be sold under this brand name:<span>*</span>
@@ -121,7 +123,7 @@ background-size: cover;">
         <label for="visionFlogo" class="formLabel">Describe your vision for the logo design and attach designs that
           you like as inspiration:<span>*</span>
         </label>
-        <input type="text" name="visionFlogoName"  class="input" maxlength="800">
+        <input type="text" name="visionFlogoName"  class="input" maxlength="800" required>
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" name="visionFlogo[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -268,10 +270,6 @@ background-size: cover;">
   <div class="sendRequest">
     <button class="sendrequestBtn btn-popup"> Send Request</button>
   </div>
-
-
-
-
  </form>
     <div class="popup" id="popup"  >
       <div class="single_prising text-center " style="max-height: 260px; max-width: 500px;">

@@ -8,7 +8,7 @@
                     <p><a href="mailto:support@studiopixelnuts.com">support@studiopixelnuts.com</a></p>
                     <br>
                     <p>Find us on Facebook:</p>
-                    <a href="https://facebook.com/pixelnuts"><img src="img/main/Facebook.png" style="width: 50px;"></a>
+                    <a href="https://facebook.com/pixelnuts"><img src="public/img/main/Facebook.png" style="width: 50px;"></a>
                     <br><br>
                     <p>Copyright @pixelnuts 2019-2022 All rights reserved.</p>
                 </div>
