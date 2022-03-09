@@ -3,4 +3,4 @@
 @section('content')
 <section class="content">
 
-    @endsection
+@endsection

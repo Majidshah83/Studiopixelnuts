@@ -225,16 +225,7 @@ background-size: cover;">
               </div>
               <label for="LuxuriousCb" class="formLabel m-0">Luxurious</label>
             </div>
-          </div>
-
-
-
-
-
-
-
-
-
+        </div>
 
         </div>
       </div>
@@ -271,7 +262,9 @@ background-size: cover;">
     <button class="sendrequestBtn btn-popup"> Send Request</button>
   </div>
  </form>
-    <div class="popup" id="popup"  >
+   @if(Session::has('message'))
+
+    <div class="popupOpen" id="popup"  >
       <div class="single_prising text-center " style="max-height: 260px; max-width: 500px;">
           <div class="prising_header d-flex justify-content-center align-items-center">
               <h3 class="" >Your request has been sent successfully!
@@ -289,14 +282,17 @@ background-size: cover;">
               </p>
 
               <div class="prising_bottom2">
-                  <button class="get_now prising_btn close-popup">Close</button>
+                  <a href="{{route('index')}}"><button class="get_now prising_btn">Close</button></a>
               </div>
           </div>
 
       </div>
   </div>
+  @endif
     <!-- <script src="https://kit.fontawesome.com/2c7577337a.js" crossorigin="anonymous"></script> -->
+
     <script>
+
       var btns = document.getElementsByClassName('btn-popup')
       var mdl = document.getElementById('popup');
       var clo = document.getElementsByClassName("close-popup")
@@ -316,9 +312,9 @@ background-size: cover;">
 
       window.addEventListener('mouseup', function(event){
 var box = document.getElementById('popup');
-if(event.target == box){
-  box.style.display = 'none';
-}
+// if(event.target == box){
+//   box.style.display = 'none';
+// }
   });
 
 

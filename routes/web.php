@@ -9,6 +9,8 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MailController;
+
 
 
 /*

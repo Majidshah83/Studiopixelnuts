@@ -1,52 +1,49 @@
 @extends('Dashboard.layout.master')
 @section('content')
-<section class="content">
+<div class="height-100 bg-light">
+      <h4>Customer List</h4>
+      <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
 
-    <div class="container mt-2">
-
-        <div class="row">
-            <div class="col-md-12 card-header text-center font-weight-bold">
-                <h2>Customer List</h2>
-            </div>
-
-            <ul id="save_msgList"></ul>
-            <div class="col-md-8">
-                <table class="table" id="example" style="
-    margin-left: 36%;
-">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th>Customer Profile</th>
-
-
-
-
-                        </tr>
-
-                    </thead>
-                    <tbody class="tab">
-                         @foreach($logo as $logos)
-                        <tr>
-                            <td>{{$logos->id}}</td>
-                            <td>{{$logos->fname}}</td>
-                            <td><a href="{{ URL('/customer-profile/'.$logos->id )}}">View</a></td>
-
-                        </tr>
-                         @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Website</th>
+                <th>View Profile</th>
+            </tr>
+        </thead>
+        <tbody>
+             @foreach($logo as $logos)
+            <tr>
+                <td>{{$logos->id}}</td>
+                <td>{{$logos->fname}}&nbsp{{$logos->surname}}</td>
+                <td>{{$logos->email}}</td>
+                <td>{{$logos->companyname}}&nbsp{{$logos->city}}&nbsp{{$logos->country}}&nbsp{{$logos->zipcode}}</td>
+                <td>{{$logos->webUrl}}</td>
+                <td><a href="{{ URL('/customer-profile/'.$logos->id )}}">View</a></td>
+            </tr>
+            @endforeach
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
     </div>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
 
-
-    </script>
 
 
     @endsection

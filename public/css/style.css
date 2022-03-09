@@ -7502,6 +7502,34 @@ a.anchor1{
   min-height: 100vh;
   max-height: 100vh;
 }
+.popupOpen{
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100vw !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display: none; */
+  padding: 0 5px 0 5px;
+  background: rgba(255,255,255,0.7);
+  z-index: 100;
+  min-width: 400px;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+.popupOpen>div{
+
+     width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  overflow-y: auto;
+  height: auto;
+  max-height: none !important;
+  z-index: 1000000000;
+  position: relative;
+}
 .popup>div{
   width: calc(100% - 40px);
   height: calc(100% - 40px);
@@ -7742,7 +7770,7 @@ padding: 10px 15px;
 /* --- form page--  */
 /* --- display form --  */
 .displayInputData{
-  width: 100%; 
+  width: 100%;
   min-height: 30px;
   background-color: white;
   padding: 10px;

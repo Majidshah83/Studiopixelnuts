@@ -8,6 +8,9 @@ use League\Flysystem\Filesystem;
 use Spatie\Dropbox\Client;
 use Spatie\FlysystemDropbox\DropboxAdapter;
 // use Spatie\Dropbox\Client;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
+use App\Mail\AdminMail;
 use Dropbox\WriteMode;
 use Storage;
 
@@ -22,6 +25,10 @@ class FormController extends Controller
 
     public function store(Request $request)
     {
+        $data = array(
+            'email'      =>  $request->email,
+
+        );
 
         $formdata= new Logo;
         $formdata->fname=$request->fname;
@@ -61,11 +68,18 @@ class FormController extends Controller
         $formdata->additionalComment=$request->additionalComment;
         $formdata->hearaboutservices=$request->hearaboutservices;
         $formdata->save();
+        Mail::to('majidcodify@gmail.com')->send(new SendMail($formdata));
+
+         $admindata=array(
+            'email'=>'alishah143083@gmail.com',
+        );
+        Mail::to($request->email)->send(new AdminMail($admindata));
    $image_links=array();
    $logo=array();
    $fontLogo=array();
    $storybrand=array();
-
+ $token = 'sl.BDeKqyow-HAl9xuJIJa7LX08HVo01bApIxkDnvVFcayvn9tLjQiNVumZsaKeVbFp-TMiUdwPnJmZsV2iUCeJPYD14qOobIbpZM8xhKOFhcn3QuRCLStxM9TPdzZ7te1zmTOujz2rhnwK'; // oauth token
+ if(isset($request->visionFlogo)) {
 foreach($request->visionFlogo as $visionFlogo)
     {
         $tmp_name=$visionFlogo->getPathname();
@@ -84,7 +98,7 @@ foreach($request->visionFlogo as $visionFlogo)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
+
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -169,8 +183,9 @@ foreach($request->visionFlogo as $visionFlogo)
 
 
             }
-
+}
 //second loop
+if(isset($request->logoColor)){
 foreach($request->logoColor as $logoColor)
     {
         $tmp_name=$logoColor->getPathname();
@@ -189,7 +204,6 @@ foreach($request->logoColor as $logoColor)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -265,7 +279,9 @@ foreach($request->logoColor as $logoColor)
    // header('Content-Type: application/json');
 
             }
+ }
 //third loop
+if(isset($request->logoFont)){
 foreach($request->logoFont as $logoFont)
     {
         $tmp_name=$logoFont->getPathname();
@@ -284,7 +300,6 @@ foreach($request->logoFont as $logoFont)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -360,7 +375,9 @@ foreach($request->logoFont as $logoFont)
    // header('Content-Type: application/json');
 
             }
+ }
 //fourth loop
+if(isset($request->brandStory)){
 foreach($request->brandStory as $brandStory)
     {
         $tmp_name=$brandStory->getPathname();
@@ -379,7 +396,6 @@ foreach($request->brandStory as $brandStory)
           // dd($newfilename);
             //   $path = "/Companies/$company->company_name/" . $newfilename;
 
-              $token = 'sl.BDXltMZcLmTQkpfPUu3zdxQH7gjz2yMhwe6EBf59R806B8TZCIx1RIr0sUjKbe4Pc76Yt2sW1x76BpF3lcVS8WgvgjfCVSxhIgZc_mzNg0nJN6j5GxSBekeSUGsgKFDqgyRlpwjZ_Eg_'; // oauth token
 
               $api_url = 'https://content.dropboxapi.com/2/files/upload';
 
@@ -455,7 +471,7 @@ foreach($request->brandStory as $brandStory)
    // header('Content-Type: application/json');
 
             }
-
+        }
             $update=Logo::where('id',$formdata->id)->first();
             $update->visionFlogo=$image_links;
             $update->logoColor=$logo;
@@ -463,7 +479,8 @@ foreach($request->brandStory as $brandStory)
             $update->brandStory=$storybrand;
             $update->save();
 
-     return redirect('/');
+
+     return back()->with('message','done');
 
     }
 }

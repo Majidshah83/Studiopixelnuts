@@ -174,11 +174,23 @@ background-size: cover;">
         <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
         <div class="displayInputData">
-            Input data will display here...
+              {{$customid->visionFlogoName}}
+
 
             <div class="inputImages">
+@if(!empty($customid->visionFlogo))
+@foreach (json_decode($customid->visionFlogo) as $image)
+                <img src="{{$image}}" alt="">
+                 <a href="{{$image}}"><button>download</button></a>
+                @endforeach
+@else
+
+echo "No data found";
+
+@endif
                 @foreach (json_decode($customid->visionFlogo) as $image)
                 <img src="{{$image}}" alt="">
+                 <a href="{{$image}}"><button>download</button></a>
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -195,10 +207,12 @@ background-size: cover;">
         <!-- <input type="text" name="logoColor" class="input" maxlength="800"> -->
         <!-- <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple> -->
         <div class="displayInputData">
-            Input data will display here...
+            {{$customid->logoColorName}}
+
             <div class="inputImages">
                 @foreach (json_decode($customid->logoColor) as $image)
                 <img src="{{$image}}" alt="">
+                <a href="{{$image}}"><button>download</button></a>
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -215,10 +229,13 @@ background-size: cover;">
           </i> -->
         </label>
         <div class="displayInputData">
-            Input data will display here...
+
+             {{$customid->logoFontName}}
+
             <div class="inputImages">
                  @foreach (json_decode($customid->logoFont) as $image)
                 <img src="{{$image}}" alt="">
+                 <a href="{{$image}}"><button>download</button></a>
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -340,10 +357,12 @@ background-size: cover;">
         <label for="brandStory" class="formLabel">Brand story
         </label>
         <div class="displayInputData">
-            Input data will display here...
+
+          {{$customid->brandStoryName}}
             <div class="inputImages">
                 @foreach (json_decode($customid->brandStory) as $image)
                 <img src="{{$image}}" alt="">
+                 <a href="{{$image}}"><button>download</button></a>
                 @endforeach
 
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
