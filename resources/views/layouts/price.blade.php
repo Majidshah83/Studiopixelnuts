@@ -341,6 +341,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- <div class="col-xl-12 col-md-12" style="padding: 0 5px 0 5px;">
                     <div class="single_prising text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".6s">
                         <div class="prising_header justify-content-between green_header">
@@ -381,6 +382,9 @@
                     </div>
                 </div> -->
             </div>
+ <p class="pricingPara">
+                    if you need customized photography plan. please send us your project brief on:
+         <br>    <a href="mailto:support@studiopixelnuts.com" class="pricingA">support@studiopixelnuts.com</a>    </p>
 
 
 

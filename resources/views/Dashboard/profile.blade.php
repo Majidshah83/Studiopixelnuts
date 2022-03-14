@@ -178,19 +178,13 @@ background-size: cover;">
 
 
             <div class="inputImages">
-@if(!empty($customid->visionFlogo))
-@foreach (json_decode($customid->visionFlogo) as $image)
-                <img src="{{$image}}" alt="">
-                 <a href="{{$image}}"><button>download</button></a>
-                @endforeach
-@else
 
-echo "No data found";
+               @foreach (json_decode($customid->visionFlogo) as $image)
+               <div class="imgbtn">
 
-@endif
-                @foreach (json_decode($customid->visionFlogo) as $image)
-                <img src="{{$image}}" alt="">
-                 <a href="{{$image}}"><button>download</button></a>
+                 <img src="{{$image}}" alt="">
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -211,8 +205,10 @@ echo "No data found";
 
             <div class="inputImages">
                 @foreach (json_decode($customid->logoColor) as $image)
+                <div class="imgbtn">
                 <img src="{{$image}}" alt="">
-                <a href="{{$image}}"><button>download</button></a>
+                <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -234,8 +230,10 @@ echo "No data found";
 
             <div class="inputImages">
                  @foreach (json_decode($customid->logoFont) as $image)
+                 <div class="imgbtn">
                 <img src="{{$image}}" alt="">
-                 <a href="{{$image}}"><button>download</button></a>
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                 </div>
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -286,7 +284,7 @@ echo "No data found";
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="SensibleCb" class="hidden-xs-up cbx1" name="sensible"  {{  ($customid->feminine == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="SensibleCb" class="hidden-xs-up cbx1" name="sensible"  {{  ($customid->sensible == 'on' ? ' checked' : '') }}>
                 <label for="SensibleCb" class="cbx"></label>
               </div>
               <label for="SensibleCb" class="formLabel m-0">Sensible</label>
@@ -361,8 +359,10 @@ echo "No data found";
           {{$customid->brandStoryName}}
             <div class="inputImages">
                 @foreach (json_decode($customid->brandStory) as $image)
+                 <div class="imgbtn">
                 <img src="{{$image}}" alt="">
-                 <a href="{{$image}}"><button>download</button></a>
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                 </div>
                 @endforeach
 
                 {{-- <img src="img/main/Coming-Soon.png" alt="">

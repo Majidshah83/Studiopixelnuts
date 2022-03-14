@@ -1,3 +1,4 @@
+@include('layouts.header')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,8 @@
   <link rel="stylesheet" href="{{asset('public/css/slick.css')}}">
   <link rel="stylesheet" href="{{asset('public/css/slicknav.css')}}">
   <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 
@@ -39,16 +42,16 @@ background-size: cover;">
     <div class="row mt-5">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <label for="fname" class="formLabel">Your name:<span>*</span> </label>
-        <input type="text" name="fname" class="input" maxlength="800" required>
+        <input type="text" name="fname" class="input required-inputs" maxlength="800" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3 mt-md-0">
         <label for="surname" class="formLabel">Your surname:<span>*</span></label>
-        <input type="text" name="surname" class="input" maxlength="800" required>
+        <input type="text" name="surname" class="input required-inputs" maxlength="800" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-4">
         <label for="hearaboutservices" class="formLabel">How did you hear about our services?
         </label>
-        <input type="text" name="hearaboutservices" class="input" maxlength="800">
+        <input type="text" name="hearaboutservices" class="input" maxlength="800" required>
       </div>
     </div>
     <h1 class="formHeading mt-5">
@@ -63,7 +66,7 @@ background-size: cover;">
           Note: If method of payment is paypal, 6% of paypal fees will be included in the invoice.
         </p>
 
-        <select name="payment"  id="" class="formSelect" required>
+        <select name="payment"  id="" class="formSelect required-inputs" required>
           <option value="">Select</option>
           <option value="BankTransfer"> Bank Transfer
           </option>
@@ -72,27 +75,27 @@ background-size: cover;">
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="companyname" class="formLabel">Company name:<span>*</span></label>
-        <input type="text" class="input" maxlength="800" name="companyname" required>
+        <input type="text" class="input required-inputs" maxlength="800" name="companyname" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="Address" class="formLabel">Address:<span>*</span></label>
-        <input type="text" name="address" class="input" maxlength="800">
+        <input type="text" name="address" class="input required-inputs" maxlength="800">
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="City" class="formLabel"> City:<span>*</span></label>
-        <input type="text" class="input" maxlength="800" name="city" required>
+        <input type="text" class="input required-inputs" maxlength="800" name="city" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="Country" class="formLabel"> Country:<span>*</span></label>
-        <input type="text" name="country" class="input" maxlength="800" required>
+        <input type="text" name="country" class="input required-inputs" maxlength="800" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="zipcode" class="formLabel"> Zip code:<span>*</span></label>
-        <input type="text" class="input" maxlength="800" name="zipcode" required>
+        <input type="text" class="input required-inputs" maxlength="800" name="zipcode" required>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
         <label for="email" class="formLabel"> Email:<span>*</span></label>
-        <input type="text" name="email" class="input" maxlength="800" required>
+        <input type="text" name="email" class="input required-inputs" maxlength="800" required>
       </div>
     </div>
     <h1 class="formHeading mt-4">
@@ -102,7 +105,7 @@ background-size: cover;">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
         <label for="nameIncorporatedLogo" class="formLabel">The name you want incorporated into the logo:<span>*</span>
         </label>
-        <input type="text" class="input" maxlength="800" name="nameIncorporatedLogo" required>
+        <input type="text" class="input required-inputs" maxlength="800" name="nameIncorporatedLogo" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="sloganIncorporatedLogo" class="formLabel">The slogan you want incorporated into the logo (Optional):
@@ -112,18 +115,18 @@ background-size: cover;">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="descLogo" class="formLabel">A short description of the logo:<span>*</span>
         </label>
-        <input type="text" class="input" maxlength="800" name="descLogo" required>
+        <input type="text" class="input required-inputs" maxlength="800" name="descLogo" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="listDescOfProducts" class="formLabel">A list and description of products that will be sold under this brand name:<span>*</span>
         </label>
-        <input type="text" class="input" maxlength="800" name="listDescOfProducts">
+        <input type="text" class="input required-inputs" maxlength="800" name="listDescOfProducts">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="visionFlogo" class="formLabel">Describe your vision for the logo design and attach designs that
           you like as inspiration:<span>*</span>
         </label>
-        <input type="text" name="visionFlogoName"  class="input" maxlength="800" required>
+        <input type="text" name="visionFlogoName"  class="input required-inputs" maxlength="800" required>
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" name="visionFlogo[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -232,7 +235,7 @@ background-size: cover;">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Describe your target audience:<span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800" required>
+        <input type="text" name="tgAudienece" class="input required-inputs" maxlength="800" required>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="brandStory" class="formLabel">Your brand story (If it's in PDF form, please attach it):
@@ -259,7 +262,7 @@ background-size: cover;">
     </div>
   </div>
   <div class="sendRequest">
-    <button class="sendrequestBtn btn-popup"> Send Request</button>
+    <button class="sendrequestBtn btn-popup btndisable"> Send Request</button>
   </div>
  </form>
    @if(Session::has('message'))
@@ -282,16 +285,13 @@ background-size: cover;">
               </p>
 
               <div class="prising_bottom2">
-                  <a href="{{route('index')}}"><button class="get_now prising_btn">Close</button></a>
+                  <a href="{{route('index')}}"><button class="get_now prising_btn close-popup">Close</button></a>
               </div>
           </div>
 
       </div>
   </div>
-  @endif
-    <!-- <script src="https://kit.fontawesome.com/2c7577337a.js" crossorigin="anonymous"></script> -->
-
-    <script>
+     <script>
 
       var btns = document.getElementsByClassName('btn-popup')
       var mdl = document.getElementById('popup');
@@ -300,9 +300,6 @@ background-size: cover;">
         btn.addEventListener('click', function() {
           mdl.style.display = "flex";
         })
-        // document.body.addEventListener('click', function() {
-        //   mdl.style.display = "none";
-        // });
         clo[0].addEventListener('click', function() {
           mdl.style.display = "none";
         });
@@ -310,15 +307,46 @@ background-size: cover;">
 
 
 
-      window.addEventListener('mouseup', function(event){
-var box = document.getElementById('popup');
+//       window.addEventListener('mouseup', function(event){
+// var box = document.getElementById('popup');
 // if(event.target == box){
 //   box.style.display = 'none';
 // }
-  });
+
 
 
     </script>
+  @endif
+    <!-- <script src="https://kit.fontawesome.com/2c7577337a.js" crossorigin="anonymous"></script> -->
+<script>
+
+        var inputs = document.querySelectorAll(".required-inputs");
+    var button = document.querySelector(".btndisable");
+    button.disabled = true;
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("input",checkInputs);
+    }
+    function checkInputs(){
+var inputIsEmpty = false;
+        for (let j = 0; j < inputs.length; j++) {
+            if (inputs[j].value=="") {
+                inputIsEmpty = true;
+            }
+
+    }
+    if (inputIsEmpty) {
+        console.log("button disabled");
+        button.disabled = true;
+    }else{
+        console.log("button enabled");
+        button.disabled = false;
+    }
+    }
+
+
+</script>
+
 </body>
 
 </html>
+@include('layouts.footer')

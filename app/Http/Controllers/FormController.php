@@ -72,13 +72,14 @@ class FormController extends Controller
 
          $admindata=array(
             'email'=>'alishah143083@gmail.com',
+            'id'=>$formdata->id,
         );
         Mail::to($request->email)->send(new AdminMail($admindata));
    $image_links=array();
    $logo=array();
    $fontLogo=array();
    $storybrand=array();
- $token = 'sl.BDeKqyow-HAl9xuJIJa7LX08HVo01bApIxkDnvVFcayvn9tLjQiNVumZsaKeVbFp-TMiUdwPnJmZsV2iUCeJPYD14qOobIbpZM8xhKOFhcn3QuRCLStxM9TPdzZ7te1zmTOujz2rhnwK'; // oauth token
+ $token = 'sl.BDrqmcivEQf_uReJTP-cDVxoLUyDr8FvUbx2i0Evuktnl61Q2gY9A8XUKWOgg7I1z_jYFfrXLq0fZXnRKXU-wM-qiCpRTpaH479mJvkbbzK2abj7bumQ6kuPuNZWNXhudjLaaQ_dYEIi'; // oauth token
  if(isset($request->visionFlogo)) {
 foreach($request->visionFlogo as $visionFlogo)
     {
