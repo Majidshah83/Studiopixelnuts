@@ -7833,12 +7833,15 @@ a.anchor1 {
 .downloadBtn button {
     cursor: pointer;
     color: white;
-    background: black;
+    background: purple;
     border: none;
     padding: 5px 20px;
     border-radius: 3px;
     display: none;
     transition: 0.5s;
+}
+.downloadBtn button:hover{
+    background-color: #009dff;
 }
 .imgbtn:hover .downloadBtn button {
     display: flex;
@@ -7853,4 +7856,13 @@ a.anchor1 {
 }
 #myForm{
         padding: 40px 0;
+}
+.imgbtn
+{
+   background-size: cover !important;
+   width: 160px;
+   height: 160px;
+   margin: 8px;
+   border-radius: 3px;
+   background-position: center !important;
 }

@@ -71,15 +71,24 @@ class FormController extends Controller
         Mail::to('majidcodify@gmail.com')->send(new SendMail($formdata));
 
          $admindata=array(
-            'email'=>'alishah143083@gmail.com',
+            'email'=>'majidcodify@gmail.com',
             'id'=>$formdata->id,
         );
         Mail::to($request->email)->send(new AdminMail($admindata));
+
+        //   Mail::to('Usama_1s@hotmail.com')->send(new SendMail($formdata)); // sending email to the admin
+
+        //  $admindata=array(
+        //     'email'=>'Usama_1s@hotmail.com',
+        //     'id'=>$formdata->id,
+        // );
+        // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
+
    $image_links=array();
    $logo=array();
    $fontLogo=array();
    $storybrand=array();
- $token = 'sl.BDrqmcivEQf_uReJTP-cDVxoLUyDr8FvUbx2i0Evuktnl61Q2gY9A8XUKWOgg7I1z_jYFfrXLq0fZXnRKXU-wM-qiCpRTpaH479mJvkbbzK2abj7bumQ6kuPuNZWNXhudjLaaQ_dYEIi'; // oauth token
+ $token = 'sl.BD24TJrXXJ1yE9WFt-xHeuikFjftUpRSWqS08IwTvcRLt2aL0_LzsbJESbW0nVnqLP5h1Fs9_wObTB0wPioM3MwZcHLp7qvI2Tln0XrzYdT0Q3wHE20C3Ue5NLlEtl3ydEF0xHSJfMoY'; // oauth token
  if(isset($request->visionFlogo)) {
 foreach($request->visionFlogo as $visionFlogo)
     {
@@ -478,7 +487,8 @@ foreach($request->brandStory as $brandStory)
             $update->logoColor=$logo;
             $update->logoFont=$fontLogo;
             $update->brandStory=$storybrand;
-            $update->save();
+
+           $update->save();
 
 
      return back()->with('message','done');

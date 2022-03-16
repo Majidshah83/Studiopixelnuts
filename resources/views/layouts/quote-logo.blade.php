@@ -127,7 +127,7 @@ background-size: cover;">
           you like as inspiration:<span>*</span>
         </label>
         <input type="text" name="visionFlogoName"  class="input required-inputs" maxlength="800" required>
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" name="visionFlogo[]" class="inpFile" multiple>
+        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" name="visionFlogo[]" class="inpFile required-inputs" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel">Which colors would you like us to use in your logo design? <br>

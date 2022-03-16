@@ -39,5 +39,6 @@ Route::post('formstore', [FormController::class, 'store'])->name('formstore');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('customer-list', [CustomerController::class, 'index'])->name('customer-list');
 Route::get('customer-profile/{id}',[CustomerController::class, 'show'])->name('customer-profile');
-Route::get('delete-profile/{id}',[CustomerController::class, 'destroy'])->name('delete-profile');
+Route::post('delete-profile/{id}',[CustomerController::class, 'removeFiles'])->name('delete-profile');
+
 // Route::get('mail',[CustomerController::class, 'showmail'])->name('mail');

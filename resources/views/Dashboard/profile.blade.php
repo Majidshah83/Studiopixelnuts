@@ -21,13 +21,19 @@
   <link rel="stylesheet" href="{{asset('public/css/slick.css')}}">
   <link rel="stylesheet" href="{{asset('public/css/slicknav.css')}}">
   <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
-
 <body style="margin: 0; padding: 0;  width: 100%;
 height: auto;
 background-image: url('{{asset('public/img/main/formBg.jpg')}}');
 background-size: cover;">
+{{-- <a href="{{route('delete-profile',$customid->id)}}" class="forumbtn">Delete Form</a> --}}
+<form action="{{route('delete-profile',$customid->id)}}" method="post">
+    @csrf
+<button class="sendrequestBtn" style="float: left; margin:10px ;">Delete Form</button>
+
+</form>
   <div class="formSection">
     <h1 class="formHeading text-center">
       Quotation Of Logo Design
@@ -178,13 +184,29 @@ background-size: cover;">
 
 
             <div class="inputImages">
-
                @foreach (json_decode($customid->visionFlogo) as $image)
-               <div class="imgbtn">
-
-                 <img src="{{$image}}" alt="">
+               @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -201,14 +223,31 @@ background-size: cover;">
         <!-- <input type="text" name="logoColor" class="input" maxlength="800"> -->
         <!-- <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple> -->
         <div class="displayInputData">
-            {{$customid->logoColorName}}
-
             <div class="inputImages">
+
                 @foreach (json_decode($customid->logoColor) as $image)
-                <div class="imgbtn">
-                <img src="{{$image}}" alt="">
-                <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                  @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -230,10 +269,28 @@ background-size: cover;">
 
             <div class="inputImages">
                  @foreach (json_decode($customid->logoFont) as $image)
-                 <div class="imgbtn">
-                <img src="{{$image}}" alt="">
+                  @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                 </div>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -256,35 +313,35 @@ background-size: cover;">
           <div class="checkBoxCol">
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="classicCb" class="hidden-xs-up cbx1" name="interests" {{  ($customid->interests == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="interests" {{  ($customid->interests == 'on' ? ' checked' : '') }}>
                 <label for="classicCb" class="cbx"></label>
               </div>
               <label for="classicCb" class="formLabel m-0">Classic</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="MatureCb" class="hidden-xs-up cbx1" name="modern"  {{  ($customid->modern == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="modern"  {{  ($customid->modern == 'on' ? ' checked' : '') }}>
                 <label for="MatureCb" class="cbx"></label>
               </div>
               <label for="MatureCb" class="formLabel m-0">Mature</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="PlayfulCb" class="hidden-xs-up cbx1" name="playful"  {{  ($customid->playful == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="playful"  {{  ($customid->playful == 'on' ? ' checked' : '') }}>
                 <label for="PlayfulCb" class="cbx"></label>
               </div>
               <label for="PlayfulCb" class="formLabel m-0">Playful</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="FeminineCb" class="hidden-xs-up cbx1" name="feminine"  {{  ($customid->feminine == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="feminine"  {{  ($customid->feminine == 'on' ? ' checked' : '') }}>
                 <label for="FeminineCb" class="cbx"></label>
               </div>
               <label for="FeminineCb" class="formLabel m-0">Feminine</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="SensibleCb" class="hidden-xs-up cbx1" name="sensible"  {{  ($customid->sensible == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="sensible"  {{  ($customid->sensible == 'on' ? ' checked' : '') }}>
                 <label for="SensibleCb" class="cbx"></label>
               </div>
               <label for="SensibleCb" class="formLabel m-0">Sensible</label>
@@ -293,14 +350,14 @@ background-size: cover;">
           <div class="checkBoxCol">
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="modernCb" class="hidden-xs-up cbx1" name="modern1" {{  ($customid->modern1 == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="modern1" {{  ($customid->modern1 == 'on' ? ' checked' : '') }}>
                 <label for="modernCb" class="cbx"></label>
               </div>
               <label for="modernCb" class="formLabel m-0">Modern</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="YouthfulCb" class="hidden-xs-up cbx1" name="youthful" {{  ($customid->youthful == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="youthful" {{  ($customid->youthful == 'on' ? ' checked' : '') }}>
                 <label for="YouthfulCb" class="cbx"></label>
               </div>
               <label for="YouthfulCb" class="formLabel m-0">Youthful</label>
@@ -308,7 +365,7 @@ background-size: cover;">
 
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="SeriousCb" class="hidden-xs-up cbx1" name="serious" {{  ($customid->serious == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="serious" {{  ($customid->serious == 'on' ? ' checked' : '') }}>
                 <label for="SeriousCb" class="cbx"></label>
               </div>
               <label for="SeriousCb" class="formLabel m-0">Serious</label>
@@ -318,14 +375,14 @@ background-size: cover;">
 
 
               <div class="cntr">
-                <input type="checkbox" id="MasculineCb" class="hidden-xs-up cbx1" name="masculine" {{  ($customid->masculine == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="masculine" {{  ($customid->masculine == 'on' ? ' checked' : '') }}>
                 <label for="MasculineCb" class="cbx"></label>
               </div>
               <label for="MasculineCb" class="formLabel m-0">Masculine</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="LuxuriousCb" class="hidden-xs-up cbx1" name="luxurious" {{  ($customid->luxurious == 'on' ? ' checked' : '') }}>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="luxurious" {{  ($customid->luxurious == 'on' ? ' checked' : '') }}>
                 <label for="LuxuriousCb" class="cbx"></label>
               </div>
               <label for="LuxuriousCb" class="formLabel m-0">Luxurious</label>
@@ -359,10 +416,29 @@ background-size: cover;">
           {{$customid->brandStoryName}}
             <div class="inputImages">
                 @foreach (json_decode($customid->brandStory) as $image)
-                 <div class="imgbtn">
-                <img src="{{$image}}" alt="">
+                 @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                 </div>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
+
                 @endforeach
 
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
@@ -403,6 +479,7 @@ background-size: cover;">
                     </div>
       </div>
     </div>
+    <a href="mailto:{{$customid->email}}"><button class="sendrequestBtn" style="float: right; margin:10px 0;">Reply</button></a>
   </div>
   <!-- <div class="sendRequest">
     <button class="sendrequestBtn btn-popup"> Send Request</button>
@@ -435,30 +512,13 @@ background-size: cover;">
       </div>
   </div> -->
     <script src="https://kit.fontawesome.com/2c7577337a.js" crossorigin="anonymous"></script>
+    <!--checkboox scrpit-->
     <script>
-//       var btns = document.getElementsByClassName('btn-popup')
-//       var mdl = document.getElementById('popup');
-//       var clo = document.getElementsByClassName("close-popup")
-//       for (btn of btns) {
-//         btn.addEventListener('click', function() {
-//           mdl.style.display = "flex";
-//         })
-
-//         clo[0].addEventListener('click', function() {
-//           mdl.style.display = "none";
-//         });
-//       }
-
-
-
-//       window.addEventListener('mouseup', function(event){
-// var box = document.getElementById('popup');
-// if(event.target == box){
-//   box.style.display = 'none';
-// }
-//   });
-
-
+     $('.test').each(function() {
+    if ($(this).val() != 'on') {
+        $(this).parent().prev().attr('disabled', 'disabled');
+    }
+});
     </script>
 </body>
 

@@ -152,7 +152,7 @@ height: 50px;
 </h2>
 </div>
 <a href="{{route('customer-profile',$formdata['id'])}}" class="forumbtn">Check Form</a>
-<a href="{{route('delete-profile',$formdata['id'])}}" class="forumbtn">Delete Form</a>
+
     </main>
     <footer class="footer">
 <div class="links">
