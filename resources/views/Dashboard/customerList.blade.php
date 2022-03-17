@@ -15,7 +15,7 @@
             <tr>
 
                 <td>{{$logos->fname}}&nbsp{{$logos->surname}}</td>
-                <td><a href="mailto:{{$logos->email}}">Reply</a></td>
+                <td><a href="mailto:">{{$logos->email}}</a></td>
                 <td><a href="{{ URL('/customer-profile/'.$logos->id )}}" target="blank">View</a></td>
             </tr>
             @endforeach

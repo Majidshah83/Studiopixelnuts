@@ -88,7 +88,7 @@ class FormController extends Controller
    $logo=array();
    $fontLogo=array();
    $storybrand=array();
- $token = 'sl.BD24TJrXXJ1yE9WFt-xHeuikFjftUpRSWqS08IwTvcRLt2aL0_LzsbJESbW0nVnqLP5h1Fs9_wObTB0wPioM3MwZcHLp7qvI2Tln0XrzYdT0Q3wHE20C3Ue5NLlEtl3ydEF0xHSJfMoY'; // oauth token
+ $token = 'sl.BD-0wPbPwP1kEBgUXQ_Jrx9k94YSfnYwCAmcegLIE1oxXwlMDNDN426oxM85RqZgYkAy8cxCMAFTa07fzHze9nLTpKmruQ0W8aEPvp9HcGryXE_1-7wCph_JM7B_FGeBazFGXSBf9dWS'; // oauth token
  if(isset($request->visionFlogo)) {
 foreach($request->visionFlogo as $visionFlogo)
     {

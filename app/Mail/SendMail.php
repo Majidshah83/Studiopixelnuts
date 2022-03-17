@@ -28,7 +28,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->formdata['email'])->subject('User Send You Request ')->view('layouts.mailTemplate')->with('formdata', $this->formdata);
+        return $this->from($this->formdata['email'])->subject('Logo Design Request Recived')->view('layouts.mailTemplate')->with('formdata', $this->formdata);
 
     }
 }

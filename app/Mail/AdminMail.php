@@ -31,6 +31,6 @@ class AdminMail extends Mailable
     public function build()
     {
 
-         return $this->from($this->admindata['email'])->subject('Notification')->view('layouts.adminemail')->with('admindata',$this->admindata);
+         return $this->from($this->admindata['email'])->subject('Logo Design Request Submitted')->view('layouts.adminemail')->with('admindata',$this->admindata);
     }
 }

@@ -195,7 +195,11 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
-
+                @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @elseif(str_contains($image, '.ai'))
                 <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -236,7 +240,11 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
-
+                 @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @elseif(str_contains($image, '.ai'))
                 <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -279,7 +287,11 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
-
+                 @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @elseif(str_contains($image, '.ai'))
                 <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -423,6 +435,11 @@ background-size: cover;">
                 </div>
                 @elseif(str_contains($image, '.psd'))
                  <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>

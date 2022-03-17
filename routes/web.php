@@ -40,5 +40,4 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 Route::get('customer-list', [CustomerController::class, 'index'])->name('customer-list');
 Route::get('customer-profile/{id}',[CustomerController::class, 'show'])->name('customer-profile');
 Route::post('delete-profile/{id}',[CustomerController::class, 'removeFiles'])->name('delete-profile');
-
 // Route::get('mail',[CustomerController::class, 'showmail'])->name('mail');
