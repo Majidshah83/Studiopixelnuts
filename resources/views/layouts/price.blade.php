@@ -735,7 +735,7 @@
             If you know exactly what you need in each image and you’re able to describe it, provide a
             reference, if necessary to make a sketch, text that you want to use, to find and provide
             stock images to use in photomanipulation, please click below:
-        </p>  <a href="quote-listing.html" class="get_now prising_btn ">I know exactly what I need.        </a>
+        </p>  <a href="{{route('qoute-listing')}}" class="get_now prising_btn ">I know exactly what I need.        </a>
 
  <p class="popuppara">
     If you don’t know what exactly you need in each image, we can create a brief for you
@@ -745,7 +745,7 @@
         </p>
         <div class="prising_bottom2 prising_bottom_fix">
 
-            <a href="quote-listing2.html" class="get_now prising_btn ">Yes, I need help.
+            <a href="{{route('qoute-listing2')}}" class="get_now prising_btn ">Yes, I need help.
             </a>
         </div>
     </div>

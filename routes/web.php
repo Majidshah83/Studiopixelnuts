@@ -12,6 +12,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PackageFormController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\ListingControlller;
+use App\Http\Controllers\Listing2Controlller;
 
 
 
@@ -54,3 +56,11 @@ Route::post('card-store',[CardController::class, 'store'])->name('card-store');
 Route::get('show-list',[CardController::class, 'showlist'])->name('show-list');
 Route::get('show_card/{id}',[CardController::class, 'showcard'])->name('show_card');
 Route::post('delete-card/{id}',[CardController::class, 'removeFiles'])->name('delete-card');
+Route::get('qoute-listing',[ListingControlller::class, 'index'])->name('qoute-listing');
+Route::post('store-listing',[ListingControlller::class, 'store'])->name('store-listing');
+
+
+
+
+
+Route::get('qoute-listing2',[Listing2Controlller::class, 'index'])->name('qoute-listing2');
