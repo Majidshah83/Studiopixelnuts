@@ -7536,23 +7536,27 @@ a.anchor1 {
     max-height: 100vh;
 }
 .popupOpen > div {
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    overflow-y: auto;
-    height: auto;
-    max-height: none !important;
-    z-index: 1000000000;
-    position: relative;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  overflow-y: auto;
+  height: auto;
+  max-height: 100vh !important;
+  z-index: 1000000000;
+  position: relative;
 }
-.popup > div {
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    overflow-y: auto;
-    height: auto;
-    max-height: none !important;
-    z-index: 1000000000;
-    position: relative;
+.popup>div{
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  overflow-y: auto;
+  height: auto;
+  max-height: 100vh !important;
+  z-index: 1000000000;
+  position: relative;
 }
+.checkboxDiv2{
+   width: 100% !important;
+   margin-bottom: 15px;
+ }
 .popuphead {
     font-weight: 600;
     font-size: 22px !important;

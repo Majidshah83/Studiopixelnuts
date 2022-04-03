@@ -185,7 +185,7 @@ background-size: cover;">
 
             <div class="inputImages">
                @foreach (json_decode($customid->visionFlogo) as $image)
-               @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
@@ -210,6 +210,11 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @endif
                 @endforeach
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
@@ -230,7 +235,7 @@ background-size: cover;">
             <div class="inputImages">
 
                 @foreach (json_decode($customid->logoColor) as $image)
-                  @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+               @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
@@ -252,6 +257,11 @@ background-size: cover;">
                 </div>
                 @elseif(str_contains($image, '.xd'))
                 <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
@@ -277,7 +287,7 @@ background-size: cover;">
 
             <div class="inputImages">
                  @foreach (json_decode($customid->logoFont) as $image)
-                  @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+                @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
@@ -299,6 +309,11 @@ background-size: cover;">
                 </div>
                 @elseif(str_contains($image, '.xd'))
                 <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
@@ -326,7 +341,7 @@ background-size: cover;">
             <div class="Checkbox">
               <div class="cntr">
                 <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="interests" {{  ($customid->interests == 'on' ? ' checked' : '') }}>
-                <label for="classicCb" class="cbx"></label>
+                <label for="interests" class="cbx"></label>
               </div>
               <label for="classicCb" class="formLabel m-0">Classic</label>
             </div>
@@ -428,7 +443,7 @@ background-size: cover;">
           {{$customid->brandStoryName}}
             <div class="inputImages">
                 @foreach (json_decode($customid->brandStory) as $image)
-                 @if(str_contains($image, '.jpg')||str_contains($image, '.png'))
+               @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
@@ -454,8 +469,12 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
                 @endif
-
                 @endforeach
 
                 {{-- <img src="img/main/Coming-Soon.png" alt="">

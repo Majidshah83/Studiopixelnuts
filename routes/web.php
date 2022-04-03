@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PackageFormController;
+use App\Http\Controllers\CardController;
 
 
 
@@ -48,3 +49,8 @@ Route::post('package_form_store',[PackageFormController::class, 'store'])->name(
 Route::get('customer-package',[PackageFormController::class, 'showlist'])->name('customer-package');
 Route::get('customer-packages/{id}',[PackageFormController::class, 'showpackage'])->name('customer-packages');
 Route::post('delete-package/{id}',[PackageFormController::class, 'removeFiles'])->name('delete-package');
+Route::get('card',[CardController::class, 'index'])->name('card');
+Route::post('card-store',[CardController::class, 'store'])->name('card-store');
+Route::get('show-list',[CardController::class, 'showlist'])->name('show-list');
+Route::get('show_card/{id}',[CardController::class, 'showcard'])->name('show_card');
+Route::post('delete-card/{id}',[CardController::class, 'removeFiles'])->name('delete-card');

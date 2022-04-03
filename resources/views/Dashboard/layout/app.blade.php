@@ -18,6 +18,10 @@
               <i class="bx bx-images nav_icon"></i>
               <span class="nav_name">Package Design</span>
             </a>
+            <a href="{{url('show-list')}}" class="nav_link">
+              <i class="bx bx-images nav_icon"></i>
+              <span class="nav_name">Card</span>
+            </a>
             <!-- <a href="#" class="nav_link">
               <i class="bx bx-message-square-detail nav_icon"></i>
               <span class="nav_name">Messages</span>

@@ -75,7 +75,7 @@
                             <!-- <li><img src="public/img/main/mark1.svg" style="width: 15px;"> Print Ready Files: Ai, PDF</li> -->
                         </ul>
                         <div class="prising_bottom">
-                            <button class="get_now prising_btn btn-popup">i need this!</button>
+                            <button class="get_now prising_btn insetCardPopupbtn">i need this!</button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                             <li><img src="{{asset('public/img/main/mark2.svg')}}" style="width: 15px;">Stock Images</li>
                         </ul>
                         <div class="prising_bottom">
-                            <button class="get_now prising_btn btn-popup">i need this!</button>
+                            <button class="get_now prising_btn ListingImagePopupbtn">i need this!</button>
                         </div>
                     </div>
                 </div>
@@ -666,6 +666,91 @@
     </div>
 </div>
 </div>
+
+
+
+<div class="popup" id="insetCardPopup"  >
+    <div class="single_prising text-center " style="max-height: 540px; max-width: 700px;">
+        <div class="prising_header d-flex justify-content-center align-items-center">
+            <h3 class="popuphead">Before you continue, please read this: </h3>
+        </div>
+        <div class="p-4 text-div text-div-scroll">
+           <h4 class="popupTitle">YOUR ORDER INCLUDES:
+        </h4>
+        <p class="popuppara">
+            1 initial concept in chosen size and type of card/brochure, 3 minor revisions, and delivery of
+            final artwork for print in Ai and PDF format.
+        </p>
+           <h4 class="popupTitle">REVISION POLICY:
+        </h4>
+        <p class="popuppara">
+            Our services include only 3 minor revisions (color, font, text, minor changes in design
+            structure and layout). Those revisions do not include new concept, changes in size of the
+            card/brochure or new type of card/brochure (for example from bi-fold to tri-fold). Make
+            sure to provide accurate information to avoid any misunderstandings or additional revision
+            charges.
+        </p>
+
+
+        <div class="prising_bottom2 prising_bottom_fix">
+
+            <a href="{{route('card')}}" class="get_now prising_btn ">I understand.</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="popup" id="ListingImagePopup"  >
+    <div class="single_prising text-center " style="max-height: 540px; max-width: 700px;">
+        <div class="prising_header d-flex justify-content-center align-items-center">
+            <h3 class="popuphead">Before you continue, please read this: </h3>
+        </div>
+        <div class="p-4 text-div text-div-scroll">
+           <h4 class="popupTitle">YOUR ORDER INCLUDES:
+        </h4>
+        <p class="popuppara">
+            • 7 listing images using product photos provided by the client and/or stock photos in
+            photomanipulation if possible <br>
+            • 3 minor revisions  <br>
+            • High resolution images 3000x3000px  <br>
+           <strong> Stock images are not included</strong> in the cost of the project. The client can purchase them
+            and send us to use in creation of images, or we can purchase it and include the cost in the
+            invoice. <br>
+         <strong>  PSD source files are not included</strong>  in the cost of the project.
+            If you need it, make sure to mention it in the next step.
+        </p>
+           <h4 class="popupTitle">REVISION POLICY:
+        </h4>
+        <p class="popuppara">
+            Our services include only 3 minor revisions in total (color, font, text, minor changes in
+            design structure and layout). Those revisions do not include new concept of the image or
+            new photomanipulation work. Make sure to provide accurate information to avoid any
+            misunderstandings or additional revision charges.
+        </p>
+           <h4 class="popupTitle">FILLING OUT THE BRIEF:
+
+        </h4>
+        <p class="popuppara">
+            If you know exactly what you need in each image and you’re able to describe it, provide a
+            reference, if necessary to make a sketch, text that you want to use, to find and provide
+            stock images to use in photomanipulation, please click below:
+        </p>  <a href="quote-listing.html" class="get_now prising_btn ">I know exactly what I need.        </a>
+
+ <p class="popuppara">
+    If you don’t know what exactly you need in each image, we can create a brief for you
+    (additional charges apply). In order to create a brief, we will need all details about your
+    product. Once we write it down, we’ll discuss it with you, and only after that - proceed with
+    design:
+        </p>
+        <div class="prising_bottom2 prising_bottom_fix">
+
+            <a href="quote-listing2.html" class="get_now prising_btn ">Yes, I need help.
+            </a>
+        </div>
+    </div>
+</div>
+</div>
 <!-- editing -->
         <script>
             var coll = document.getElementsByClassName("collapsible");
@@ -739,6 +824,53 @@ if(event.target == packageDesignBox){
             })
             clo3[0].addEventListener('click', function () {
                 mdl3.style.display = "none";
+            });
+        }
+
+
+        </script>
+        <script>
+                 window.addEventListener('mouseup', function(event){
+        var insetCardPopupBox= document.getElementById('insetCardPopup');
+if(event.target == insetCardPopupBox){
+    insetCardPopupBox.style.display = 'none';
+}
+  });
+
+        var btns4 = document.getElementsByClassName('insetCardPopupbtn')
+        var mdl4 = document.getElementById('insetCardPopup');
+        var clo4 = document.getElementsByClassName("close-popup2")
+        for (btn4 of btns4) {
+            btn4.addEventListener('click', function () {
+                mdl4.style.display = "flex";
+            })
+            clo4[0].addEventListener('click', function () {
+                mdl4.style.display = "none";
+            });
+        }
+
+
+        </script>
+
+
+
+        <script>
+                 window.addEventListener('mouseup', function(event){
+        var ListingImagePopupBox= document.getElementById('ListingImagePopup');
+if(event.target == ListingImagePopupBox){
+    ListingImagePopupBox.style.display = 'none';
+}
+  });
+
+        var btns5 = document.getElementsByClassName('ListingImagePopupbtn')
+        var mdl5 = document.getElementById('ListingImagePopup');
+        var clo5 = document.getElementsByClassName("close-popup2")
+        for (btn5 of btns5) {
+            btn5.addEventListener('click', function () {
+                mdl5.style.display = "flex";
+            })
+            clo5[0].addEventListener('click', function () {
+                mdl4.style.display = "none";
             });
         }
 
