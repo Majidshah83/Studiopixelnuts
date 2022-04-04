@@ -35,6 +35,8 @@ background-size: cover;">
     <h1 class="formHeading">
       In order to get started, please fill out information below:
     </h1>
+    <form id="myForm" method="POST" action="{{ url('store-listing') }}" enctype="multipart/form-data">
+    @csrf
     <div class="row mt-5">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <label for="fname" class="formLabel">Your name:<span>*</span> </label>
@@ -62,7 +64,7 @@ background-size: cover;">
           Note: If method of payment is paypal, 6% of paypal fees will be included in the invoice.
         </p>
 
-        <select name="" id="" class="formSelect">
+        <select name="payment" id="" class="formSelect">
           <option value="">Select</option>
           <option value="BankTransfer"> Bank Transfer
           </option>
@@ -103,8 +105,8 @@ background-size: cover;">
         <label for="visionFlogo" class="formLabel">Upload all product photos or provide link to the folder to download it:*
             <span>*</span>
         </label>
-        <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple>
+        <input type="text" name="photos" class="input" maxlength="800">
+        <label for="photosfile" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="photosfile" name="photos_file[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel"><h5 class="m-0 text-white">Image 1 - Main Image:
@@ -112,8 +114,8 @@ background-size: cover;">
             that you like, a reference from competitor or a sketch: <span> *</span> <br>
 
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="main" class="input" maxlength="800">
+        <label for="mainfile" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="mainfile" name="main_file[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel"><h5 class="m-0 text-white">Image 2 :
@@ -121,22 +123,22 @@ background-size: cover;">
         that you like, a reference from competitor or a sketch: <span> *</span> <br>
 
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="competitor" class="input" maxlength="800">
+        <label for="competitor" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="competitor" name="competitor_file[]" class="inpFile" multiple>
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
             <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="images" class="input" maxlength="800">
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">If you’d like to use any stock photos in this image, provide links:
 
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="stock" class="input" maxlength="800">
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -145,76 +147,76 @@ background-size: cover;">
         that you like, a reference from competitor or a sketch: <span> *</span> <br>
 
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="sketch" class="input" maxlength="800">
+        <label for="sketch" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="sketch_file[]" id="sketch" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
             <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="timage" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">If you’d like to use any stock photos in this image, provide links:
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="stock_image" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel"><h5 class="m-0 text-white">Image 4 :
         </h5>  Design Inspiration: Describe this image and attach a reference to the design
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="design" class="input" maxlength="800">
+        <label for="design" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="design_file[]" id="design" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
             <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="text_image" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">If you’d like to use any stock photos in this image, provide links:
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="provide_image" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel"><h5 class="m-0 text-white">Image 5 :
         </h5>  Design Inspiration: Describe this image and attach a reference to the design
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="reference" class="input" maxlength="800">
+        <label for="reference" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="reference_file[]" id="reference" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
             <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="audi_image" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">If you’d like to use any stock photos in this image, provide links:
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="link_image" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel"><h5 class="m-0 text-white">Image 6 :
         </h5> Design Inspiration: Describe this image and attach a reference to the design
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="logo_image" class="input" maxlength="800">
+        <label for="logo_image" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logo_image" name="logo_image_file[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
             <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="be_image" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">If you’d like to use any stock photos in this image, provide links:
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="any_image" class="input" maxlength="800">
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -222,19 +224,19 @@ background-size: cover;">
         </h5>Design Inspiration: Describe this image and attach a reference to the design
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
-        <input type="text" name="logoColor" class="input" maxlength="800">
-        <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple>
+        <input type="text" name="or_image" class="input" maxlength="800">
+        <label for="or_image" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="or_image_file[]" id="or_image" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
             <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="image_tg" class="input" maxlength="800">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">If you’d like to use any stock photos in this image, provide links:
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="likeimage" class="input" maxlength="800">
       </div>
       </div>
       <h1 class="formHeading mt-4">
@@ -250,8 +252,8 @@ background-size: cover;">
             <i>In case that we need additional text for infographics.
             </i>
         </label>
-        <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple>
+        <input type="text" name="infographics" class="input" maxlength="800">
+        <label for="infographics" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="infographics" name="infographics_file[]" class="inpFile" multiple>
       </div>
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="visionFlogo" class="formLabel">If you’d like us to use your logo in listing images, attach it:
@@ -260,43 +262,40 @@ background-size: cover;">
                 JPEG or PNG.
             </i>
         </label>
-        <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple>
+        <input type="text" name="vector" class="input" maxlength="800">
+        <label for="vector" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="vector" name="vector_file[]" class="inpFile" multiple>
       </div>
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Which colors would you like us to use for the graphic elements in your
+        <label for="palette1" class="formLabel">Which colors would you like us to use for the graphic elements in your
             infographics/photo manipulation images?<br>
             <i>(Optional: Attach an image of color palette)
 
             </i>
         </label>
-        <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple>
+        <input type="text" name="palette" class="input required-inputs" maxlength="800">
+        <label for="barcodeimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="palette_file[]" id="barcodeimg" class="inpFile required-inputs" multiple>
       </div>
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="visionFlogo" class="formLabel">Which fonts would you like to use in your infographics/photo
             manipulation images? <br>
             <i>(Optional: Attach images of fonts that you like)
-
             </i>
         </label>
-        <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple>
+         <input type="text" name="info" class="input" maxlength="800">
+        <label for="colorPackageimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="info_file[]" id="colorPackageimg" class="inpFile" multiple>
       </div>
-
-
-
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Describe your target audience for this product:  <span>*</span>
         </label>
-        <input type="text" name="tgAudienece" class="input" maxlength="800">
+        <input type="text" name="target_image" class="input" maxlength="800">
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="visionFlogo" class="formLabel">If you have branding guide, please attach it:
         </label>
-        <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple>
+        </label>
+        <input type="text" name="guidei" class="input" maxlength="800">
+        <label for="fontPackageimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="fontPackageimg" name="guidei_file[]" class="inpFile" multiple>
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -308,7 +307,7 @@ background-size: cover;">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="webUrl" class="formLabel">Your top competitors:
         </label>
-        <input type="text" class="input" maxlength="800" name="webUrl">
+        <input type="text" class="input" maxlength="800" name="topcompetitor">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="avoid" class="formLabel">What to avoid?
@@ -325,9 +324,7 @@ background-size: cover;">
   <div class="sendRequest">
     <button class="sendrequestBtn btn-popup"> Send Request</button>
   </div>
-
-
-
+</form>
     <div class="popup" id="popup"  >
       <div class="single_prising text-center " style="max-height: 260px; max-width: 500px;">
           <div class="prising_header d-flex justify-content-center align-items-center">

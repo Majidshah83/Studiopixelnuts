@@ -163,7 +163,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -208,7 +208,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -267,7 +267,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -312,7 +312,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -370,7 +370,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -415,7 +415,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -473,7 +473,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -518,7 +518,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -576,7 +576,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -621,7 +621,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -679,7 +679,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -724,7 +724,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -782,7 +782,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -827,7 +827,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
@@ -886,7 +886,7 @@ return redirect('/show-list');
                   'Dropbox-API-Arg: ' .
                   json_encode(
                       array(
-                              "path" =>"/Logo/$formdata->id/" . $image_name,
+                              "path" =>"/Card/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -931,7 +931,7 @@ return redirect('/show-list');
 
                 $post_data=json_encode(
                     array(
-   "path" => "/Logo/$formdata->id/". $image_name
+   "path" => "/Card/$formdata->id/". $image_name
    ),
                 );
                 // dd($post_data);
