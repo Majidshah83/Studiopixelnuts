@@ -233,7 +233,7 @@ background-size: cover;">
         <!-- <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple> -->
         <div class="displayInputData">
             <div class="inputImages">
-
+               
                 @foreach (json_decode($customid->logoColor) as $image)
                @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -267,6 +267,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">

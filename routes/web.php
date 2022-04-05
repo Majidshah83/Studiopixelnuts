@@ -58,9 +58,8 @@ Route::get('show_card/{id}',[CardController::class, 'showcard'])->name('show_car
 Route::post('delete-card/{id}',[CardController::class, 'removeFiles'])->name('delete-card');
 Route::get('qoute-listing',[ListingControlller::class, 'index'])->name('qoute-listing');
 Route::post('store-listing',[ListingControlller::class, 'store'])->name('store-listing');
-
-
-
-
+Route::get('show-listing',[ListingControlller::class, 'showlist'])->name('show-listing');
+Route::get('list-profile/{id}',[ListingControlller::class, 'showListing'])->name('list-profile');
+Route::post('delete-listing/{id}',[ListingControlller::class, 'removeFiles'])->name('delete-listing');
 
 Route::get('qoute-listing2',[Listing2Controlller::class, 'index'])->name('qoute-listing2');

@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Listing;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
+use App\Mail\AdminMail;
+use Dropbox\WriteMode;
+use Storage;
+use Illuminate\Support\Facades\Auth;
 class ListingControlller extends Controller
 {
     // index
@@ -15,15 +21,57 @@ class ListingControlller extends Controller
     public function showlist()
    {
 
-       $logo=Package::orderBy('id', 'ASC')->get();
-       return view('Dashboard.packageList',compact('logo'));
+       $logo=Listing::orderBy('id', 'ASC')->get();
+       return view('Dashboard.list',compact('logo'));
 
    }
+    //Show package Listing
+    public function  showListing($id)
+    {
+       $user= Auth::check();
+
+        if($user==true)
+        {
+             $customid=Listing::where('id',$id)->first();
+           return view('Dashboard.listing',compact('customid'));
+        }else
+        {
+            return redirect('/');
+        }
+
+    }
+//delete
+  public function  removeFiles(Request $request,$id)
+{
+
+ $token = $this->getShortToken(); // oauth token
+ $parameters = array('path' =>'/Listing/'.$id);
+$headers = array('Authorization: Bearer'.$token ,'Content-Type: application/json');
+$curlOptions = array(
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => json_encode($parameters),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_VERBOSE => true
+    );
+
+$ch = curl_init('https://api.dropboxapi.com/2/files/delete_v2');
+curl_setopt_array($ch, $curlOptions);
+
+$response = curl_exec($ch);
+// echo $response;
+curl_close($ch);
+$profile=Listing::findOrFail($id);
+$profile->delete();
+return redirect('/show-listing');
+
+}
 
    //insert data
 
 public function store(Request $request)
 {
+
         $formdata= new Listing;
         $formdata->fname=$request->fname;
         $formdata->surname=$request->surname;
@@ -86,20 +134,21 @@ public function store(Request $request)
         //     'id'=>$formdata->id,
         // );
         // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
-         $token = 'sl.BFGau1S-Hyl6TAnOTV5kN90g8Mifn3oLir9B_PYmmdCDu_8DBC4sJNY6CV86opO1DMSnCa49I0yLEmrJ2bU66Z8w8i8FqCDkMM5O0McZWS2_SLOpjAc29ITA_V99seiWL8F6WEeuY1XF'; // oauth token
+        //  $token = 'sl.BFJ54ixAf581bT9hZN_uaHU6iy9UZB_LO2I3s4KoufSHrcdjO0O9FIcoeScA2KXrFKdvpplBrVtsYjysWF9Cg4oj_3ChVwgnQ4xk2bVz_3UJ0P9xsJ109m1Jg06UqZU6WVAaGuowkO55'; // oauth token
+        $token = $this->getShortToken(); // oauth token
         $photosfile=array();
         $mainfile=array();
-        $competitorfile=array();
-        $sketchfile=array();
-        $designfile=array();
-        $referencefile=array();
-        $or_imagefile=array();
-        $logo_imagefile=array();
-        $infographicsfile=array();
-        $vectorfile=array();
-        $palettefile=array();
-        $infofile=array();
-        $guideifile=array();
+        $competfile=array();
+        $desigile=array();
+       $sketcile=array();
+       $referfile=array();
+       $logkfile=array();
+       $oimagefile=array();
+       $infogfile=array();
+       $vecfile=array();
+       $paletfile=array();
+       $infoil=array();
+       $guideifile=array();
          if (isset($request->photos_file)) {
             foreach ($request->photos_file as $photos_file) {
                 $tmp_name=$photos_file->getPathname();
@@ -203,8 +252,8 @@ public function store(Request $request)
             }
         }
 
-        //second loop
-          if (isset($request->main_file)) {
+       // 2nd loop
+              if (isset($request->main_file)) {
             foreach ($request->main_file as $main_file) {
                 $tmp_name=$main_file->getPathname();
                 $type=$main_file->getMimeType();
@@ -216,8 +265,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -307,10 +355,8 @@ public function store(Request $request)
                 // header('Content-Type: application/json');
             }
         }
-
-
-        //3rd loop
-            if (isset($request->competitor_file)) {
+       // 3rd loop
+              if (isset($request->competitor_file)) {
             foreach ($request->competitor_file as $competitor_file) {
                 $tmp_name=$competitor_file->getPathname();
                 $type=$competitor_file->getMimeType();
@@ -322,9 +368,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -410,14 +454,12 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($competitorfile, $link);
+                array_push($competfile, $link);
                 // header('Content-Type: application/json');
             }
         }
-
-
         //4th loop
-             if (isset($request->sketch_file)) {
+            if (isset($request->sketch_file)) {
             foreach ($request->sketch_file as $sketch_file) {
                 $tmp_name=$sketch_file->getPathname();
                 $type=$sketch_file->getMimeType();
@@ -429,9 +471,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -517,14 +557,14 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($sketchfile, $link);
+                array_push($sketcile, $link);
                 // header('Content-Type: application/json');
             }
         }
 
-
         //5th loop
-         if (isset($request->design_file)) {
+
+                if (isset($request->design_file)) {
             foreach ($request->design_file as $design_file) {
                 $tmp_name=$design_file->getPathname();
                 $type=$design_file->getMimeType();
@@ -536,9 +576,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -624,14 +662,14 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($sketchfile, $link);
+                array_push($desigile, $link);
                 // header('Content-Type: application/json');
             }
         }
+       //6th loop
 
-        //6th loop
-            if (isset($request->reference_file)) {
-            foreach ($request->design_file as $reference_file) {
+             if (isset($request->reference_file)) {
+            foreach ($request->reference_file as $reference_file) {
                 $tmp_name=$reference_file->getPathname();
                 $type=$reference_file->getMimeType();
                 $extension=$reference_file->getClientOriginalName();
@@ -642,9 +680,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -730,16 +766,17 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($referencefile, $link);
+                array_push($referfile, $link);
                 // header('Content-Type: application/json');
             }
         }
         //7th loop
-     if (isset($request->logo_image_file)) {
+
+         if (isset($request->logo_image_file)) {
             foreach ($request->logo_image_file as $logo_image_file) {
                 $tmp_name=$logo_image_file->getPathname();
                 $type=$logo_image_file->getMimeType();
-                $extension=$logo_image_file->getClientOriginalName();
+                $extension=$reference_file->getClientOriginalName();
                 $image_name=time().$extension;
                 $size=$logo_image_file->getSize();
                 $error=$logo_image_file->getError();
@@ -747,9 +784,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -835,16 +870,18 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($logo_imagefile, $link);
+                array_push($logkfile, $link);
                 // header('Content-Type: application/json');
             }
         }
         //8th loop
- if (isset($request->or_image_file)) {
+
+
+         if (isset($request->or_image_file)) {
             foreach ($request->or_image_file as $or_image_file) {
                 $tmp_name=$or_image_file->getPathname();
                 $type=$or_image_file->getMimeType();
-                $extension=$or_image_file->getClientOriginalName();
+                $extension=$reference_file->getClientOriginalName();
                 $image_name=time().$extension;
                 $size=$or_image_file->getSize();
                 $error=$or_image_file->getError();
@@ -852,9 +889,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -940,13 +975,13 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($or_imagefile, $link);
+                array_push($oimagefile, $link);
                 // header('Content-Type: application/json');
             }
         }
         //9th loop
-        if (isset($request->infographics_file)) {
-            foreach ($request->or_image_file as $infographics_file) {
+          if (isset($request->infographics_file)) {
+            foreach ($request->infographics_file as $infographics_file) {
                 $tmp_name=$infographics_file->getPathname();
                 $type=$infographics_file->getMimeType();
                 $extension=$infographics_file->getClientOriginalName();
@@ -957,9 +992,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -1045,11 +1078,12 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($infographicsfile, $link);
+                array_push($infogfile, $link);
                 // header('Content-Type: application/json');
             }
         }
-        //10th loop
+       // loop  10th
+
          if (isset($request->vector_file)) {
             foreach ($request->vector_file as $vector_file) {
                 $tmp_name=$vector_file->getPathname();
@@ -1062,9 +1096,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -1150,11 +1182,12 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($vectorfile, $link);
+                array_push($vecfile, $link);
                 // header('Content-Type: application/json');
             }
         }
-        //11th loop
+     //11th loop
+
          if (isset($request->palette_file)) {
             foreach ($request->palette_file as $palette_file) {
                 $tmp_name=$palette_file->getPathname();
@@ -1167,9 +1200,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -1255,13 +1286,13 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($palettefile, $link);
+                array_push($paletfile, $link);
                 // header('Content-Type: application/json');
             }
         }
+       //12th loop
 
-        //12th loop
-          if (isset($request->info_file)) {
+         if (isset($request->info_file)) {
             foreach ($request->info_file as $info_file) {
                 $tmp_name=$info_file->getPathname();
                 $type=$info_file->getMimeType();
@@ -1273,9 +1304,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -1361,15 +1390,12 @@ public function store(Request $request)
                 $link = $r['url'];
                 $link = substr($link, 0, -4)."dl=1";
 
-                array_push($infofile, $link);
+                array_push($infoil, $link);
                 // header('Content-Type: application/json');
             }
         }
-
-
-        //13th loop
-
-          if (isset($request->guidei_file)) {
+        //13 loop
+         if (isset($request->guidei_file)) {
             foreach ($request->guidei_file as $guidei_file) {
                 $tmp_name=$guidei_file->getPathname();
                 $type=$guidei_file->getMimeType();
@@ -1381,9 +1407,7 @@ public function store(Request $request)
                 $file = $tmp_name;
 
 
-
-               $temp = explode(".", $image_name);
-
+                $temp = explode(".", $image_name);
 
                 $newfilename = round(microtime(true)) . '.' . end($temp);
                 // dd($newfilename);
@@ -1475,25 +1499,49 @@ public function store(Request $request)
         }
 
         //end loop
-         $update=Listing::where('id', $formdata->id)->first();
+        $update=Listing::where('id', $formdata->id)->first();
         $update->photos_file=$photosfile;
-         $update->main_file=$mainfile;
-         $update->competitor_file=$competitorfile;
-          $update->sketch_file=$sketchfile;
-          $update->design_file=$sketchfile;
-          $update->reference_file=$referencefile;
-          $update->logo_image_file=$logo_imagefile;
-          $update->or_image_file=$or_imagefile;
-         $update->infographics_file=$infographicsfile;
-         $update->vector_file=$vectorfile;
-         $update->palette_file=$palettefile;
-         $update->info_file=$infofile;
-         $update->guidei_file=$guideifile;
-        $update->save();
-
+        $update->main_file=$mainfile;
+        $update->competitor_file=$competfile;
+        $update->sketch_file=$sketcile;
+        $update->design_file=$desigile;
+        $update->reference_file=$referfile;
+        $update->logo_image_file=$logkfile;
+        $update->or_image_file=$oimagefile;
+        $update->infographics_file=$infogfile;
+        $update->vector_file=$vecfile;
+        $update->palette_file=$paletfile;
+        $update->info_file=$infoil;
+        $update->guidei_file=$guideifile;
+         $update->save();
+        return back()->with('message', 'done');
 
 
 
 }
+public function getShortToken()
+    {
+        $refresh = 'a6ClnhCy1ZIAAAAAAAAAAYjVzAmTmHp3u2U8qKhJ9upioOsNl9lXz31KfJhH5KPi';
+
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.dropbox.com/oauth2/token');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "grant_type=refresh_token&refresh_token=$refresh");
+        curl_setopt($ch, CURLOPT_USERPWD, '3e214n7reg5lqig' . ':' . 'ol40x97izoh4n8u');
+
+        $headers = array();
+        $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = json_decode(curl_exec($ch));
+        if (curl_errno($ch)) {
+            return 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        return $result->access_token;
+    }
 
 }

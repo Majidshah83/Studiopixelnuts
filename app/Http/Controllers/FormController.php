@@ -25,7 +25,7 @@ class FormController extends Controller
   public function  removeFiles(Request $request,$id)
 {
 $token = $this->getShortToken(); // oauth token
-$parameters = array('path' =>'/'.$id);
+$parameters = array('path' =>'/Logo/'.$id);
 $headers = array('Authorization: Bearer'.$token,'Content-Type: application/json');
 
 $curlOptions = array(

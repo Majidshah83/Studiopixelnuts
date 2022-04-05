@@ -22,6 +22,13 @@
               <i class="bx bx-images nav_icon"></i>
               <span class="nav_name">Card</span>
             </a>
+            <a href="{{url('show-listing')}}" class="nav_link">
+              <i class="bx bx-images nav_icon"></i>
+              <span class="nav_name">Listing</span>
+            </a>
+
+
+
             <!-- <a href="#" class="nav_link">
               <i class="bx bx-message-square-detail nav_icon"></i>
               <span class="nav_name">Messages</span>

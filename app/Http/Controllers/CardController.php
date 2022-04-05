@@ -42,9 +42,9 @@ class CardController extends Controller
  //delete file
  public function  removeFiles(Request $request,$id)
 {
-$token = $this->getShortToken(); // oauth token
- $parameters = array('path' =>'/'.$id);
-$headers = array('Authorization: Bearer'.$token ,'Content-Type: application/json');
+ $token = $this->getShortToken(); // oauth token
+ $parameters = array('path' =>'/Card/'.$id);
+$headers = array('Authorization: Bearer'.$token,'Content-Type: application/json');
 $curlOptions = array(
         CURLOPT_HTTPHEADER => $headers,
         CURLOPT_POST => true,
@@ -126,7 +126,8 @@ return redirect('/show-list');
         // );
         // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
 
-          $token = $this->getShortToken(); // oauth token
+         $token = $this->getShortToken(); // oauth token
+        //   $token='sl.BFJ54ixAf581bT9hZN_uaHU6iy9UZB_LO2I3s4KoufSHrcdjO0O9FIcoeScA2KXrFKdvpplBrVtsYjysWF9Cg4oj_3ChVwgnQ4xk2bVz_3UJ0P9xsJ109m1Jg06UqZU6WVAaGuowkO55';
           $image_links=array();
           $inspiration=array();
           $logofile=array();

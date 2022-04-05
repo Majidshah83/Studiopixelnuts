@@ -213,7 +213,7 @@ background-size: cover;">
                     </div>
       </div>
        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel"> Attach Logo of Ai"
+        <label for="visionFlogo" class="formLabel"> Attach Logo of Ai:
         </label>
         <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
@@ -263,7 +263,7 @@ background-size: cover;">
                     </div>
       </div>
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Attach references to the designs "
+        <label for="visionFlogo" class="formLabel">Attach references to the designs:
         </label>
         <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
@@ -312,15 +312,15 @@ background-size: cover;">
                     </div>
       </div>
        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Attach references to the designs:
+        <label for="visionFlogo" class="formLabel">Logo attach in Ai:
         </label>
         <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
         <div class="displayInputData">
-              {{$customid->logo}}
+              {{$customid->attachLogo}}
 
             <div class="inputImages">
-               @foreach (json_decode($customid->logo_file) as $image)
+               @foreach (json_decode($customid->attachLogo_file) as $image)
              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -367,7 +367,7 @@ background-size: cover;">
 
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 ">
         <p class="formLabel mb-2">
-            What would you want the purpose of your card/brochure to be?
+            What would you want the purpose of your card/brochure to be:
 
         </p>
 
@@ -568,7 +568,7 @@ background-size: cover;">
                     </div>
       </div>
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Insert card is supposed to include images of product,:
+        <label for="visionFlogo" class="formLabel">Insert card is supposed to include images of product:
         </label>
         <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
         <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
@@ -625,7 +625,7 @@ background-size: cover;">
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 ">
         <p class="formLabel mb-2">
-            Creative vision: How do you see your insert card design?
+            Creative vision: How do you see your insert card design:
 
         </p>
 
@@ -718,7 +718,7 @@ background-size: cover;">
                     </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="avoid" class="formLabel">What to avoid?
+        <label for="avoid" class="formLabel">What to avoid:
         </label>
         <!-- <input type="text" name="avoid" class="input" maxlength="800"> -->
         <div class="displayInputData">

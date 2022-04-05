@@ -130,7 +130,7 @@ background-size: cover;">
           <i>The acceptable formats for dielines are Ai, PDF or EPS.    </i>
         </label>
         <input type="text" name="sizeOfPackagingimg" class="input required-inputs" maxlength="800" required>
-        <label for="sizeOfPackaging" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="sizeOfPackaging" name="size_file[]" class="inpFile inpimg  required-inputs" required multiple>
+        <label for="sizeOfPackaging" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="sizeOfPackaging" name="size_file[]" class="inpFile inpimg" multiple>
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -138,7 +138,7 @@ background-size: cover;">
             we can understand which direction you would like us to go in:<span>*</span>
         </label>
         <input type="text" name="attachPackageDesign" class="input required-inputs" maxlength="800" required>
-        <label for="attachPackageDesignimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="design_file[]" id="attachPackageDesignimg" class="inpFile required-inputs" multiple>
+        <label for="attachPackageDesignimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="design_file[]" id="attachPackageDesignimg" class="inpFile" multiple>
       </div>
 
 
@@ -229,7 +229,7 @@ required.
 
         </label>
         <input type="text" name="barcode" class="input required-inputs" maxlength="800" required>
-        <label for="barcodeimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="barcodefile[]" id="barcodeimg" class="inpFile required-inputs" multiple>
+        <label for="barcodeimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" name="barcodefile[]" id="barcodeimg" class="inpFile" multiple>
       </div>
 
 

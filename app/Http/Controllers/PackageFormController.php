@@ -45,8 +45,8 @@ class PackageFormController extends Controller
 //delete file
  public function  removeFiles(Request $request,$id)
 {
-$token = $this->getShortToken(); // oauth token
- $parameters = array('path' =>'/'.$id);
+ $token = $this->getShortToken(); // oauth token
+ $parameters = array('path' =>'/Package/'.$id);
 $headers = array('Authorization: Bearer'.$token ,'Content-Type: application/json');
 $curlOptions = array(
         CURLOPT_HTTPHEADER => $headers,
@@ -143,7 +143,7 @@ $font_ffile=array();
 $bar_code=array();
 $certificate_file=array();
 $token = $this->getShortToken(); // oauth token
-//  $token='sl.BEudtcSZ342sij9Wcp5Qux8Eko_vl0j__NP0N7CYcqPVbEO2JDZk1Hg8sw3DaWycEuEyCvmNMN9O8EOFLxt_26KLk5JQHuEOkl5la6-X2eV54SYdo7mnXg8qpIiD0KjML6D_Zl8GDC2Q';
+//   $token='sl.BFJ54ixAf581bT9hZN_uaHU6iy9UZB_LO2I3s4KoufSHrcdjO0O9FIcoeScA2KXrFKdvpplBrVtsYjysWF9Cg4oj_3ChVwgnQ4xk2bVz_3UJ0P9xsJ109m1Jg06UqZU6WVAaGuowkO55';
 //first loop
 // dd($request->picOfPackagefile);
 
@@ -175,7 +175,7 @@ foreach($request->pic_file as $pic_file)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -211,7 +211,7 @@ foreach($request->pic_file as $pic_file)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -273,7 +273,7 @@ foreach($request->size_file as $size_file)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -309,7 +309,7 @@ foreach($request->size_file as $size_file)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -370,7 +370,7 @@ foreach($request->design_file as $design_file)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -406,7 +406,7 @@ foreach($request->design_file as $design_file)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -466,7 +466,7 @@ foreach($request->slogofiles as $slogofiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -502,7 +502,7 @@ foreach($request->slogofiles as $slogofiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -562,7 +562,7 @@ foreach($request->packageTextfile as $packageTextfiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -598,7 +598,7 @@ foreach($request->packageTextfile as $packageTextfiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -659,7 +659,7 @@ foreach($request->attachPackagefile as $attachPackagefiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -695,7 +695,7 @@ foreach($request->attachPackagefile as $attachPackagefiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -755,7 +755,7 @@ foreach($request->colorPackagefile as $colorPackagefiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -791,7 +791,7 @@ foreach($request->colorPackagefile as $colorPackagefiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -852,7 +852,7 @@ foreach($request->fontPackagefile as $fontPackagefiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -888,7 +888,7 @@ foreach($request->fontPackagefile as $fontPackagefiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -949,7 +949,7 @@ foreach($request->barcodefile as $barcodefiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -985,7 +985,7 @@ foreach($request->barcodefile as $barcodefiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
@@ -1045,7 +1045,7 @@ foreach($request->certificationsORwarninfile as $certificationsORwarninfiles)
                   'Dropbox-API-Arg: ' .
                   json_encode(
                           array(
-                              "path" =>"/$formdata->id/" . $image_name,
+                              "path" =>"/Package/$formdata->id/" . $image_name,
                               "mode" => "add",
                               "autorename" => true,
                               "mute" => false,
@@ -1081,7 +1081,7 @@ foreach($request->certificationsORwarninfile as $certificationsORwarninfiles)
    // $path = 'Companies/' . $company->company_name . '/' . $newfilename;
 
    $post_data=json_encode(array(
-   "path" => "/$formdata->id/". $image_name
+   "path" => "/Package/$formdata->id/". $image_name
    ),
 
    );
