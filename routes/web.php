@@ -61,5 +61,8 @@ Route::post('store-listing',[ListingControlller::class, 'store'])->name('store-l
 Route::get('show-listing',[ListingControlller::class, 'showlist'])->name('show-listing');
 Route::get('list-profile/{id}',[ListingControlller::class, 'showListing'])->name('list-profile');
 Route::post('delete-listing/{id}',[ListingControlller::class, 'removeFiles'])->name('delete-listing');
-
 Route::get('qoute-listing2',[Listing2Controlller::class, 'index'])->name('qoute-listing2');
+Route::post('store-listing2',[Listing2Controlller::class, 'store'])->name('store-listing2');
+Route::get('show-listing2',[Listing2Controlller::class, 'showlist'])->name('show-listing2');
+Route::get('list2-profile/{id}',[Listing2Controlller::class, 'showListing'])->name('list2-profile');
+Route::post('delete-listing2/{id}',[Listing2Controlller::class, 'removeFiles'])->name('delete-listing2');

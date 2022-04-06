@@ -29,14 +29,14 @@ height: auto;
 background-image: url('{{asset('public/img/main/formBg.jpg')}}');
 background-size: cover;">
 {{-- <a href="{{route('delete-profile',$customid->id)}}" class="forumbtn">Delete Form</a> --}}
-<form action="{{route('delete-card',$customid->id)}}" method="post">
+<form action="{{route('delete-listing2',$customid->id)}}" method="post">
     @csrf
 <button class="sendrequestBtn" style="float: left; margin:10px ;">Delete Form</button>
 
 </form>
   <div class="formSection">
     <h1 class="formHeading text-center">
-      Quotation of Card Design
+       Quotation Of Listing2 Design
     </h1>
     <div class="row mt-5">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -139,304 +139,390 @@ background-size: cover;">
       Project details:
     </h1>
     <div class="row mt-3">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="visionFlogo" class="formLabel">All product photos:
+        </label>
+        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
+        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <div class="displayInputData">
+              {{$customid->photo}}
+            <div class="inputImages">
+               @if(isset($customid->photo_file))
+               @foreach (json_decode($customid->photo_file) as $image)
+              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
+                @endforeach
+                @endif
+                {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt=""> --}}
+            </div>
+                    </div>
+      </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-        <label for="nameIncorporatedLogo" class="formLabel"> Insert card and number:
+        <label for="nameIncorporatedLogo" class="formLabel">Product name and description:
         </label>
         <!-- <input type="text" class="input" maxlength="800" name="nameIncorporatedLogo"> -->
         <div class="displayInputData">
-            {{$customid->card}}
+            {{$customid->tgAudienece}}
+                    </div>
+      </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="visionFlogo" class="formLabel">All product details:
+        </label>
+        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
+        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <div class="displayInputData">
+              {{$customid->benefit}}
+            <div class="inputImages">
+               @if(isset($customid->benefit_file))
+               @foreach (json_decode($customid->benefit_file) as $image)
+              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
+                @endforeach
+                @endif
+                {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt=""> --}}
+            </div>
+                    </div>
+      </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="visionFlogo" class="formLabel">Your product attach files:
+        </label>
+        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
+        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <div class="displayInputData">
+              {{$customid->manual}}
+            <div class="inputImages">
+               @if(isset($customid->manual_file))
+               @foreach (json_decode($customid->manual_file) as $image)
+              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
+                @endforeach
+                @endif
+                {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt=""> --}}
+            </div>
+                    </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+        <label for="nameIncorporatedLogo" class="formLabel">A list of  product unique or stand out from the competition:
+        </label>
+        <!-- <input type="text" class="input" maxlength="800" name="nameIncorporatedLogo"> -->
+        <div class="displayInputData">
+            {{$customid->unique}}
                     </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="sloganIncorporatedLogo" class="formLabel">Product giftable:
+        </label>
         <!-- <input type="text" class="input" maxlength="800" name="sloganIncorporatedLogo"> -->
         <div class="displayInputData">
-             {{$customid->productShortDesc}}
+             {{$customid->giftable}}
 
                     </div>
       </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="visionFlogo" class="formLabel">Product packaging print ready file in Ai:
+        </label>
+        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
+        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <div class="displayInputData">
+              {{$customid->ready}}
+            <div class="inputImages">
+               @if(isset($customid->ready_file))
+               @foreach (json_decode($customid->ready_file) as $image)
+              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
+                @endforeach
+                @endif
+                {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt=""> --}}
+            </div>
+                    </div>
+      </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="visionFlogo" class="formLabel">Product come with a product manual:
+        </label>
+        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
+        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <div class="displayInputData">
+              {{$customid->product}}
+            <div class="inputImages">
+               @if(isset($customid->product_file))
+               @foreach (json_decode($customid->product_file) as $image)
+              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
+               <div class="imgbtn" style="background: url({{$image}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.psd'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.pdf'))
+                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.ai'))
+                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @elseif(str_contains($image, '.xd'))
+                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                 @else
+                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
+                 {{-- <img src="{{$image}}" alt=""> --}}
+                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
+                </div>
+                @endif
+                @endforeach
+                @endif
+                {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt=""> --}}
+            </div>
+                    </div>
+      </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="descLogo" class="formLabel">Size/format of insert card:
+        <label for="descLogo" class="formLabel">listing for this product is currently live:
         </label>
         <!-- <input type="text" class="input" maxlength="800" name="descLogo"> -->
         <div class="displayInputData">
-             {{$customid->sizeformat}}
+             {{$customid->currently}}
 
                     </div>
       </div>
-         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Attach references to the designs:
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="listDescOfProducts" class="formLabel">Products under this brand:
         </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <!-- <input type="text" class="input" maxlength="800" name="listDescOfProducts"> -->
         <div class="displayInputData">
-              {{$customid->picOfPackage}}
-            <div class="inputImages">
-                 @if(isset($customid->picOfPackage_file))
-               @foreach (json_decode($customid->picOfPackage_file) as $image)
-              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
-               <div class="imgbtn" style="background: url({{$image}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.psd'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.pdf'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.ai'))
-                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.xd'))
-                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                 @else
-                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @endif
-                @endforeach
-                @endif
-                {{-- <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt=""> --}}
-            </div>
+            {{$customid->under}}
+
                     </div>
       </div>
-       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel"> Attach Logo of Ai:
-        </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
-        <div class="displayInputData">
-              {{$customid->inspiration}}
-
-            <div class="inputImages">
-                  @if(isset($customid->inspiration_file))
-               @foreach (json_decode($customid->inspiration_file) as $image)
-              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
-               <div class="imgbtn" style="background: url({{$image}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.psd'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.pdf'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.ai'))
-                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.xd'))
-                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                 @else
-                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @endif
-                @endforeach
-                @endif
-                {{-- <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt=""> --}}
-            </div>
-                    </div>
-      </div>
-         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Attach references to the designs:
-        </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
-        <div class="displayInputData">
-              {{$customid->logo}}
-            <div class="inputImages">
-                 @if(isset($customid->logo_file))
-               @foreach (json_decode($customid->logo_file) as $image)
-             @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
-               <div class="imgbtn" style="background: url({{$image}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.psd'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.pdf'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.ai'))
-                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.xd'))
-                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                 @else
-                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @endif
-                @endforeach
-                @endif
-                {{-- <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt=""> --}}
-            </div>
-                    </div>
-      </div>
-       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Logo attach in Ai:
-        </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
-        <div class="displayInputData">
-              {{$customid->attachLogo}}
-
-            <div class="inputImages">
-                @if(isset($customid->attachLogo_file))
-               @foreach (json_decode($customid->attachLogo_file) as $image)
-             @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
-               <div class="imgbtn" style="background: url({{$image}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.psd'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.pdf'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.ai'))
-                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.xd'))
-                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                 @else
-                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @endif
-                @endforeach
-                @endif
-                {{-- <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt=""> --}}
-            </div>
-                    </div>
-      </div>
-
-
-
-
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 ">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 ">
         <p class="formLabel mb-2">
-            What would you want the purpose of your card/brochure to be:
-
+        Described brand:
         </p>
-
-        <div class="checkboxDiv checkboxDiv2">
+         <div class="checkboxDiv">
 
           <div class="checkBoxCol">
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" id="test" name="buyer" {{($customid->buyer == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="classicCb" class="cbx"></label>
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="interests" {{  ($customid->luxury == 'on' ? ' checked' : '') }}>
+                <label for="interests" class="cbx"></label>
               </div>
-              <label for="classicCb" class="formLabel m-0">To ask buyers to leave you a review
-            </label>
+              <label for="classicCb" class="formLabel m-0">Luxury</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" name="brand" id="test" {{($customid->brand == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="modern"  {{  ($customid->casual == 'on' ? ' checked' : '') }}>
                 <label for="MatureCb" class="cbx"></label>
               </div>
-              <label for="MatureCb" class="formLabel m-0">To tell buyers a little bit about your brand or product
-            </label>
+              <label for="MatureCb" class="formLabel m-0">Casual</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" name="instruct" id="test" {{($customid->instruct == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="playful"  {{  ($customid->expensive == 'on' ? ' checked' : '') }}>
                 <label for="PlayfulCb" class="cbx"></label>
               </div>
-              <label for="PlayfulCb" class="formLabel m-0">To provide instructions on how to use the product
-            </label>
+              <label for="PlayfulCb" class="formLabel m-0">Expensive</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" name="bought" id="test" {{($customid->bought == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="feminine"  {{  ($customid->economic == 'on' ? ' checked' : '') }}>
                 <label for="FeminineCb" class="cbx"></label>
               </div>
-              <label for="FeminineCb" class="formLabel m-0">To give buyers the option of contacting you after they have bought the product
-            </label>
+              <label for="FeminineCb" class="formLabel m-0">Economic</label>
+            </div>
+
+          </div>
+          <div class="checkBoxCol">
+            <div class="Checkbox">
+              <div class="cntr">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="modern1" {{ ($customid->serious == 'on' ? ' checked' : '') }}>
+                <label for="modernCb" class="cbx"></label>
+              </div>
+              <label for="modernCb" class="formLabel m-0">Serious</label>
             </div>
             <div class="Checkbox">
               <div class="cntr">
-                <input type="checkbox" name="advertise" id="test" {{($customid->advertise == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="youthful" {{  ($customid->feminine == 'on' ? ' checked' : '') }}>
+                <label for="YouthfulCb" class="cbx"></label>
+              </div>
+              <label for="YouthfulCb" class="formLabel m-0">Feminine</label>
+            </div>
+            <div class="Checkbox">
+              <div class="cntr">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="serious" {{  ($customid->masculine == 'on' ? ' checked' : '') }}>
+                <label for="SeriousCb" class="cbx"></label>
+              </div>
+              <label for="SeriousCb" class="formLabel m-0">Masculine</label>
+            </div>
+               <div class="Checkbox">
+              <div class="cntr">
+                <input type="checkbox" id="test" class="hidden-xs-up cbx1" name="sensible"  {{  ($customid->playfu == 'on' ? ' checked' : '') }}>
                 <label for="SensibleCb" class="cbx"></label>
               </div>
-              <label for="SensibleCb" class="formLabel m-0">To advertise other products under your existing brand
-            </label>
+              <label for="SensibleCb" class="formLabel m-0">Playfu</label>
             </div>
           </div>
         </div>
       </div>
-
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Text to be used in insert card design:
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="tgAudienece" class="formLabel">Product's price point in comparison to the competition:
         </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
+        <!-- <input type="text" name="tgAudienece" class="input" maxlength="800"> -->
         <div class="displayInputData">
-              {{$customid->card_design}}
+           {{$customid->comparison}}
+                    </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="brandStory" class="formLabel">The acceptable formats for logo are Ai:
+        </label>
+        <div class="displayInputData">
 
+          {{$customid->high}}
             <div class="inputImages">
-                 @if(isset($customid->card_design_file))
-               @foreach (json_decode($customid->card_design_file) as $image)
+                  @if(isset($customid->high_file))
+                @foreach (json_decode($customid->high_file) as $image)
                @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -447,11 +533,12 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
-                @elseif(str_contains($image, '.pdf'))
+                 @elseif(str_contains($image, '.pdf'))
                  <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
+
                 @elseif(str_contains($image, '.ai'))
                 <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -470,26 +557,30 @@ background-size: cover;">
                 @endif
                 @endforeach
                 @endif
+
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt=""> --}}
             </div>
                     </div>
+        <!-- <textarea name="name" rows="6" cols="80" class="input" maxlength="2000"></textarea> -->
+
+        <!-- <input type="text" name="brandStory" class="input" maxlength="2000"> -->
+        <!-- <label for="brandstoryimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="brandstoryimg" class="inpFile" multiple> -->
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Colors of insert card design:
+        <label for="brandStory" class="formLabel">Color codes and fonts of brand
         </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
         <div class="displayInputData">
-              {{$customid->palette}}
 
+          {{$customid->specific}}
             <div class="inputImages">
-                 @if(isset($customid->palette_file))
-               @foreach (json_decode($customid->palette_file) as $image)
-              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
+                  @if(isset($customid->specific_file))
+                @foreach (json_decode($customid->specific_file) as $image)
+               @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
@@ -499,11 +590,12 @@ background-size: cover;">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
-                @elseif(str_contains($image, '.pdf'))
+                 @elseif(str_contains($image, '.pdf'))
                  <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
                  <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
                 </div>
+
                 @elseif(str_contains($image, '.ai'))
                 <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
                  {{-- <img src="{{$image}}" alt=""> --}}
@@ -522,217 +614,38 @@ background-size: cover;">
                 @endif
                 @endforeach
                 @endif
+
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
+                <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt=""> --}}
             </div>
+                    </div>
+        <!-- <textarea name="name" rows="6" cols="80" class="input" maxlength="2000"></textarea> -->
+
+        <!-- <input type="text" name="brandStory" class="input" maxlength="2000"> -->
+        <!-- <label for="brandstoryimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="brandstoryimg" class="inpFile" multiple> -->
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <label for="webUrl" class="formLabel">Target audience for this product::
+        </label>
+        <!-- <input type="text" class="input" maxlength="800" name="webUrl"> -->
+        <div class="displayInputData">
+            {{$customid->targete}}
                     </div>
       </div>
        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Insert card design:
-        </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
-        <div class="displayInputData">
-              {{$customid->fonts}}
-            <div class="inputImages">
-                  @if(isset($customid->fonts_file))
-               @foreach (json_decode($customid->fonts_file) as $image)
-              @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
-               <div class="imgbtn" style="background: url({{$image}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.psd'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.pdf'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.ai'))
-                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.xd'))
-                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                 @else
-                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @endif
-                @endforeach
-                @endif
-                {{-- <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt=""> --}}
-            </div>
-                    </div>
-      </div>
-         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="visionFlogo" class="formLabel">Insert card is supposed to include images of product:
-        </label>
-        <!-- <input type="text" name="visionFlogo" class="input" maxlength="800">
-        <label for="attachlogodesign" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="attachlogodesign" class="inpFile" multiple> -->
-        <div class="displayInputData">
-              {{$customid->resolution}}
-            <div class="inputImages">
-                 @if(isset($customid->resolution_file))
-               @foreach (json_decode($customid->resolution_file) as $image)
-             @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
-               <div class="imgbtn" style="background: url({{$image}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.psd'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/psd.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.pdf'))
-                 <div class="imgbtn" style="background: url({{asset('public/img/pdf.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.ai'))
-                <div class="imgbtn" style="background: url({{asset('public/img/Adobe_Illustrator_.AI_File_Icon.png')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @elseif(str_contains($image, '.xd'))
-                <div class="imgbtn" style="background: url({{asset('public/img/xd.webp')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                 @else
-                <div class="imgbtn" style="background: url({{asset('public/img/text.jpg')}})">
-                 {{-- <img src="{{$image}}" alt=""> --}}
-                 <a class="downloadBtn" href="{{$image}}"><button>download</button></a>
-                </div>
-                @endif
-                @endforeach
-                @endif
-                {{-- <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt="">
-                <img src="img/main/Coming-Soon.png" alt=""> --}}
-            </div>
-                    </div>
-      </div>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="includeWebsite" class="formLabel">Graphics designed:</label>
-        <!-- <input type="text" name="Country" class="input" maxlength="800"> -->
-        <div class="displayInputData">
-             {{$customid->includeWebsite}}
-                    </div>
-      </div>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 ">
-        <p class="formLabel mb-2">
-            Creative vision: How do you see your insert card design:
 
-        </p>
-
-        <div class="checkboxDiv">
-
-          <div class="checkBoxCol">
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="luxury" {{($customid->luxury == 'on' ? ' checked' : '') }} class="test hidden-xs-up cbx1">
-                <label for="luxury" class="cbx"></label>
-              </div>
-              <label for="luxury" class="formLabel m-0">Luxury</label>
-            </div>
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="minimalist" {{($customid->minimalist == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="minimalist" class="cbx"></label>
-              </div>
-              <label for="minimalist" class="formLabel m-0">Minimalist</label>
-            </div>
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="playful" {{($customid->playful == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="playful" class="cbx"></label>
-              </div>
-              <label for="playful" class="formLabel m-0">Playful</label>
-            </div>
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="feminine" {{($customid->feminine == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="feminine" class="cbx"></label>
-              </div>
-              <label for="feminine" class="formLabel m-0">Feminine</label>
-            </div>
-
-          </div>
-          <div class="checkBoxCol">
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="casual" {{($customid->casual == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="modernCb" class="cbx"></label>
-              </div>
-              <label for="modernCb" class="formLabel m-0">Casual</label>
-            </div>
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="detailed" {{($customid->detailed == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="YouthfulCb" class="cbx"></label>
-              </div>
-              <label for="YouthfulCb" class="formLabel m-0">Detailed</label>
-            </div>
-
-            <div class="Checkbox">
-              <div class="cntr">
-                <input type="checkbox" id="test" name="serious" {{($customid->serious == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="SeriousCb" class="cbx"></label>
-              </div>
-              <label for="SeriousCb" class="formLabel m-0">Serious</label>
-            </div>
-
-            <div class="Checkbox">
-
-
-              <div class="cntr">
-                <input type="checkbox" id="test" name="masculine" {{($customid->masculine == 'on' ? ' checked' : '') }} class="hidden-xs-up cbx1">
-                <label for="MasculineCb" class="cbx"></label>
-              </div>
-              <label for="MasculineCb" class="formLabel m-0">Masculine</label>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="tgAudienece" class="formLabel">Audience for this brand:
-        </label>
-        <!-- <input type="text" name="tgAudienece" class="input" maxlength="800"> -->
-        <div class="displayInputData">
-           {{$customid->audience}}
-                    </div>
-      </div>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-        <label for="webUrl" class="formLabel">Website, storefront or listing URL:
+        <label for="webUrl" class="formLabel">Top competitors:
         </label>
         <!-- <input type="text" class="input" maxlength="800" name="webUrl"> -->
         <div class="displayInputData">
             {{$customid->webUrl}}
                     </div>
       </div>
+
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="avoid" class="formLabel">What to avoid:
         </label>
@@ -785,7 +698,7 @@ background-size: cover;">
     <script src="https://kit.fontawesome.com/2c7577337a.js" crossorigin="anonymous"></script>
     <!--checkboox scrpit-->
     <script>
-     $('#test').each(function() {
+     $('.test').each(function() {
     if ($(this).val() != 'on') {
         $(this).parent().prev().attr('disabled', 'disabled');
     }

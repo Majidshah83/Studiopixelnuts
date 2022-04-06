@@ -173,6 +173,7 @@ background-size: cover;">
         <div class="displayInputData">
               {{$customid->picOfPackage}}
             <div class="inputImages">
+                @if(isset($customid->pic_file))
                @foreach (json_decode($customid->pic_file) as $image)
               @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -206,6 +207,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -223,7 +225,7 @@ background-size: cover;">
         <div class="displayInputData">
               {{$customid->sizeOfPackagingimg}}
             <div class="inputImages">
-
+                  @if(isset($customid->size_file))
                 @foreach (json_decode($customid->size_file) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -257,6 +259,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -276,6 +279,7 @@ background-size: cover;">
              {{$customid->attachPackageDesign}}
 
             <div class="inputImages">
+                   @if(isset($customid->design_file))
                  @foreach (json_decode($customid->design_file) as $image)
                  @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -309,6 +313,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -330,6 +335,7 @@ background-size: cover;">
              {{$customid->attachLogo}}
 
             <div class="inputImages">
+                  @if(isset($customid->slogofiles))
                  @foreach (json_decode($customid->slogofiles) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -363,6 +369,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -386,6 +393,7 @@ background-size: cover;">
              {{$customid->packageText}}
 
             <div class="inputImages">
+                 @if(isset($customid->packageTextfile))
                  @foreach (json_decode($customid->packageTextfile) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -419,6 +427,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -442,6 +451,7 @@ background-size: cover;">
              {{$customid->attachPackageimages}}
 
             <div class="inputImages">
+                @if(isset($customid->attachPackagefile))
                  @foreach (json_decode($customid->attachPackagefile) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -475,6 +485,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -499,6 +510,7 @@ background-size: cover;">
              {{$customid->colorPackage}}
 
             <div class="inputImages">
+                  @if(isset($customid->colorPackagefile))
                  @foreach (json_decode($customid->colorPackagefile) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -532,6 +544,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -557,6 +570,7 @@ background-size: cover;">
              {{$customid->fontPackage}}
 
             <div class="inputImages">
+                 @if(isset($customid->fontPackagefile))
                  @foreach (json_decode($customid->fontPackagefile) as $image)
                   @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -590,6 +604,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -620,6 +635,7 @@ background-size: cover;">
              {{$customid->barcode}}
 
             <div class="inputImages">
+                 @if(isset($customid->barcodefile))
                  @foreach (json_decode($customid->barcodefile) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -653,6 +669,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -682,6 +699,7 @@ background-size: cover;">
              {{$customid->certificationsORwarning}}
 
             <div class="inputImages">
+               @if(isset($customid->certificationsORwarninfile))
                  @foreach (json_decode($customid->certificationsORwarninfile) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -715,6 +733,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">

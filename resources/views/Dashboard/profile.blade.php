@@ -184,6 +184,7 @@ background-size: cover;">
 
 
             <div class="inputImages">
+               @if(isset($customid->visionFlogo))
                @foreach (json_decode($customid->visionFlogo) as $image)
               @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -217,6 +218,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -232,8 +234,9 @@ background-size: cover;">
         <!-- <input type="text" name="logoColor" class="input" maxlength="800"> -->
         <!-- <label for="logocolorimg" class="inpimg"><i class="fas fa-image"></i></label> <input type="file" id="logocolorimg" class="inpFile" multiple> -->
         <div class="displayInputData">
+            {{$customid->logoColorName}}
             <div class="inputImages">
-               
+                @if(isset($customid->logoColor))
                 @foreach (json_decode($customid->logoColor) as $image)
                @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -267,6 +270,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
 
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -287,6 +291,7 @@ background-size: cover;">
              {{$customid->logoFontName}}
 
             <div class="inputImages">
+                 @if(isset($customid->logoFont))
                  @foreach (json_decode($customid->logoFont) as $image)
                 @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -320,6 +325,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">
@@ -416,16 +422,6 @@ background-size: cover;">
               <label for="LuxuriousCb" class="formLabel m-0">Luxurious</label>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
         </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -443,6 +439,7 @@ background-size: cover;">
 
           {{$customid->brandStoryName}}
             <div class="inputImages">
+                  @if(isset($customid->brandStory))
                 @foreach (json_decode($customid->brandStory) as $image)
                @if(str_contains($image, '.jpg')||str_contains($image, '.png')||str_contains($image, '.PNG')||str_contains($image, '.JPG'))
                <div class="imgbtn" style="background: url({{$image}})">
@@ -477,6 +474,7 @@ background-size: cover;">
                 </div>
                 @endif
                 @endforeach
+                @endif
 
                 {{-- <img src="img/main/Coming-Soon.png" alt="">
                 <img src="img/main/Coming-Soon.png" alt="">

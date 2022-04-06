@@ -26,6 +26,10 @@
               <i class="bx bx-images nav_icon"></i>
               <span class="nav_name">Listing</span>
             </a>
+             <a href="{{url('show-listing2')}}" class="nav_link">
+              <i class="bx bx-images nav_icon"></i>
+              <span class="nav_name">Listing2</span>
+            </a>
 
 
 
