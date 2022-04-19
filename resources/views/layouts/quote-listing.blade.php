@@ -115,7 +115,7 @@ background-size: cover;">
 
         </label>
         <input type="text" name="main" class="input required-inputs" maxlength="800">
-        <label for="mainfile" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" id="mainfile" name="main_file[]" class="inpFile required-inputs" multiple>
+        <label for="mainfile" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" id="mainfile" name="main_file[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="logoColor" class="formLabel"><h5 class="m-0 text-white">Image 2 :
@@ -124,7 +124,7 @@ background-size: cover;">
 
         </label>
         <input type="text" name="competitor" class="input required-inputs" maxlength="800">
-        <label for="competitor" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" id="competitor" name="competitor_file[]" class="inpFile required-inputs" multiple>
+        <label for="competitor" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" id="competitor" name="competitor_file[]" class="inpFile" multiple>
       </div>
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -148,7 +148,7 @@ background-size: cover;">
 
         </label>
         <input type="text" name="sketch" class="input required-inputs" maxlength="800">
-        <label for="sketch" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="sketch_file[]" id="sketch" class="inpFile required-inputs" multiple>
+        <label for="sketch" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="sketch_file[]" id="sketch" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
@@ -167,7 +167,7 @@ background-size: cover;">
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
         <input type="text" name="design" class="input required-inputs" maxlength="800">
-        <label for="design" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="design_file[]" id="design" class="inpFile required-inputs" multiple>
+        <label for="design" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="design_file[]" id="design" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
@@ -186,7 +186,7 @@ background-size: cover;">
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
         <input type="text" name="reference" class="input required-inputs" maxlength="800">
-        <label for="reference" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="reference_file[]" id="reference" class="inpFile required-inputs" multiple>
+        <label for="reference" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="reference_file[]" id="reference" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
@@ -205,7 +205,7 @@ background-size: cover;">
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
         <input type="text" name="logo_image" class="input required-inputs" maxlength="800">
-        <label for="logo_image" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" id="logo_image" name="logo_image_file[]" class="inpFile required-inputs" multiple>
+        <label for="logo_image" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" id="logo_image" name="logo_image_file[]" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:
@@ -225,7 +225,7 @@ background-size: cover;">
         that you like, a reference from competitor or a sketch:<span> *</span> <br>
         </label>
         <input type="text" name="or_image" class="input required-inputs" maxlength="800">
-        <label for="or_image" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="or_image_file[]" id="or_image" class="inpFile required-inputs" multiple>
+        <label for="or_image" class="inpimg required-inputs required"><i class="fas fa-image"></i></label> <input type="file" name="or_image_file[]" id="or_image" class="inpFile" multiple>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
         <label for="tgAudienece" class="formLabel">Text to be used in this image:

@@ -125,13 +125,13 @@ return redirect('/customer-package');
         $formdata->avoid=$request->avoid;
         $formdata->additionalComment=$request->additionalComment;
         $formdata->save();
-        // Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
+        Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
 
-        // $admindata=array(
-        //     'email'=>'Usama_1s@hotmail.com',
-        //     'id'=>$formdata->id,
-        // );
-        // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
+        $admindata=array(
+            'email'=>'Usama_1s@hotmail.com',
+            'id'=>$formdata->id,
+        );
+        Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
 $picfont=array();
 $sizesarry=array();
 $attachDesiging=array();

@@ -93,13 +93,13 @@ return redirect('/customer-package');
         $formdata->additionalComment=$request->additionalComment;
         $formdata->hearaboutservices=$request->hearaboutservices;
         $formdata->save();
-        // Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
+        Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
 
-        // $admindata=array(
-        //     'email'=>'Usama_1s@hotmail.com',
-        //     'id'=>$formdata->id,
-        // );
-        // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
+        $admindata=array(
+            'email'=>'Usama_1s@hotmail.com',
+            'id'=>$formdata->id,
+        );
+        Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
         $image_links=array();
         $logo=array();
         $fontLogo=array();

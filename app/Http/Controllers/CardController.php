@@ -118,13 +118,13 @@ return redirect('/show-list');
           $formdata->additionalComment=$request->additionalComment;
           $formdata->save();
 
-          // Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
+          Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
 
-        // $admindata=array(
-        //     'email'=>'Usama_1s@hotmail.com',
-        //     'id'=>$formdata->id,
-        // );
-        // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
+        $admindata=array(
+            'email'=>'Usama_1s@hotmail.com',
+            'id'=>$formdata->id,
+        );
+        Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
 
          $token = $this->getShortToken(); // oauth token
         //   $token='sl.BFJ54ixAf581bT9hZN_uaHU6iy9UZB_LO2I3s4KoufSHrcdjO0O9FIcoeScA2KXrFKdvpplBrVtsYjysWF9Cg4oj_3ChVwgnQ4xk2bVz_3UJ0P9xsJ109m1Jg06UqZU6WVAaGuowkO55';

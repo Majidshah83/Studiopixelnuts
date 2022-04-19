@@ -115,13 +115,13 @@ return redirect('/show-listing2');
         $formdata->avoid=$request->avoid;
         $formdata->additionalComment=$request->additionalComment;
         $formdata->save();
-         // Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
+         Mail::to('support@studiopixelnuts.com')->send(new SendMail($formdata)); // sending email to the admin
 
-        // $admindata=array(
-        //     'email'=>'Usama_1s@hotmail.com',
-        //     'id'=>$formdata->id,
-        // );
-        // Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
+        $admindata=array(
+            'email'=>'Usama_1s@hotmail.com',
+            'id'=>$formdata->id,
+        );
+        Mail::to($request->email)->send(new AdminMail($admindata)); // sending email to the user
         //  $token = 'sl.BFMk9pzRx3T2CQ5HOeVlbw0CAkQa5ilYGaXkwBgM27Up74sYmY0bFgXIZFd3e5CIW0TcqY-LofdD3TI5l-pDF_uw7VJwOAvg3jPFEs7HEaswuKm8QtCYErESw4hoozk9JM9ZIkEqGWwf'; // oauth token
          $token = $this->getShortToken(); // oauth token
         $photoile=array();
